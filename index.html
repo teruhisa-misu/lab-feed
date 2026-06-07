@@ -89,20 +89,36 @@
       border:1px solid var(--line);color:var(--muted);font-family:var(--mono);
       font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.85em}
   .kind.funding{border-color:var(--accent-soft);color:var(--accent)}
+  .related{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;
+      border:1px dashed var(--line);color:var(--faint);font-family:var(--mono);
+      font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.78em}
   .cat{color:var(--faint)}
   .rel{display:flex;align-items:center;gap:9px;color:var(--muted);margin-left:auto}
   .rel .bar{width:84px;height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
   .rel .bar i{display:block;height:100%;background:var(--accent);border-radius:3px;
       box-shadow:0 0 10px var(--accent-soft)}
 
-  .tldr{font-family:var(--mono);color:var(--accent);font-size:clamp(13px,1.1vw,17px);
-      letter-spacing:.04em;margin-bottom:clamp(10px,1.1vw,16px);opacity:.92}
-  h1.title{font-family:var(--disp);font-weight:600;line-height:1.06;margin:0;
-      font-size:clamp(34px,4.7vw,76px);letter-spacing:-.01em;
-      text-wrap:balance;max-width:18ch}
-  .highlight{font-family:var(--jp);font-weight:400;color:#d6deea;line-height:1.62;
-      font-size:clamp(17px,1.7vw,29px);margin-top:clamp(20px,2.2vw,38px);max-width:46ch;
-      border-left:2px solid var(--accent-soft);padding-left:clamp(16px,1.4vw,26px)}
+  .tldr{font-family:var(--mono);color:var(--accent);font-size:clamp(12px,1.0vw,16px);
+      letter-spacing:.04em;margin-bottom:clamp(8px,1.0vw,14px);opacity:.92}
+  h1.title{font-family:var(--disp);font-weight:600;line-height:1.07;margin:0;
+      font-size:clamp(22px,2.7vw,40px);letter-spacing:-.01em;
+      text-wrap:balance;max-width:24ch}
+  h1.title.cardTitle{font-size:clamp(20px,2.4vw,34px);opacity:.92;margin-bottom:6px;max-width:46ch}
+  .card{display:grid;grid-template-columns:1fr 1fr;
+      gap:clamp(16px,2.4vw,40px) clamp(28px,3.2vw,64px);
+      margin-top:clamp(12px,1.6vw,24px);max-width:none;width:100%;
+      flex:1;min-height:0;align-content:space-evenly}
+  .cardRow{display:flex;flex-direction:column;gap:6px;min-width:0;
+      border-left:2px solid var(--accent-soft);padding-left:18px}
+  .cardLab{font-family:var(--mono);font-size:.82em;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--accent)}
+  .cardVal{font-family:var(--jp);color:#d6deea;line-height:1.5;font-size:clamp(16px,1.5vw,24px)}
+  .cardSrc{font-family:var(--mono);font-size:.72em;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--faint)}
+  .highlight{font-family:var(--jp);font-weight:400;color:#d6deea;line-height:1.5;
+      font-size:clamp(15px,1.35vw,21px);margin-top:clamp(14px,1.6vw,26px);max-width:46ch;
+      border-left:2px solid var(--accent-soft);padding-left:clamp(16px,1.4vw,26px);
+      display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:10;overflow:hidden}
   .authors{margin-top:auto;padding-top:clamp(18px,2vw,30px);color:var(--muted);
       font-family:var(--body);font-style:italic;font-size:clamp(14px,1.15vw,20px)}
   .funding{margin-top:clamp(14px,1.5vw,22px);font-family:var(--mono);color:var(--accent);
@@ -111,13 +127,18 @@
   .funding::before{content:"◆";font-size:.7em;opacity:.8}
 
   /* right meta rail */
-  .rail{width:clamp(150px,15vw,230px);flex:none;display:flex;flex-direction:column;
-      align-items:flex-end;justify-content:space-between;text-align:right;
+  .rail{width:clamp(190px,24vw,380px);flex:none;display:flex;flex-direction:column;
+      align-items:flex-end;justify-content:flex-start;gap:clamp(12px,1.4vw,20px);text-align:right;
       margin-left:clamp(22px,2.4vw,48px);font-family:var(--mono)}
-  .rail .idx{font-family:var(--disp);font-weight:400;font-size:clamp(40px,6vw,104px);
+  /* 画像のあるスライドは右側を広げ、画像を大きく(画面の約1/6) */
+  .slide.has-media .rail{width:clamp(280px,40vw,940px)}
+  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;
+      border:1px solid var(--line);background:var(--bg2);box-shadow:0 12px 34px rgba(0,0,0,.4)}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .rail .idx{font-family:var(--disp);font-weight:400;font-size:clamp(34px,4.4vw,76px);
       line-height:.8;color:var(--accent);opacity:.9}
   .rail .idx small{font-size:.32em;color:var(--faint);letter-spacing:.1em}
-  .qr{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+  .qr{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:auto}
   .qr .box{background:#fff;padding:9px;border-radius:10px;width:108px;height:108px;
       display:flex;align-items:center;justify-content:center}
   .qr .box canvas,.qr .box img{display:block;width:100%!important;height:100%!important}
@@ -153,6 +174,7 @@
   @media (max-aspect-ratio:1/1){
     .rail{display:none}
     h1.title{font-size:clamp(30px,8vw,56px);max-width:none}
+    .card{grid-template-columns:1fr;max-width:none}
     .highlight{font-size:clamp(16px,4.4vw,24px)}
   }
 </style>
@@ -196,7 +218,7 @@
    設定 / Config
    ============================================================ */
 const CONFIG = {
-  slideSeconds: 60,                 // 1枚あたりの表示秒数
+  slideSeconds: 60,                 // 1枚あたりの表示秒数(切替の間隔)
   dataUrl: "highlights.json",       // 生成物を置けば自動で読む(無ければ下のサンプル)
   refreshMinutes: 30,               // データ再読込の間隔
   fullReloadHours: 6                // つけっぱなし対策＋file://での新データ反映: この間隔でページ全体を再読込
@@ -221,6 +243,11 @@ const SAMPLE = {
       title:"Emergent norms in large-scale multi-agent LLM societies",
       tldr:"NORM EMERGENCE @ SCALE",
       highlight:"Identifies the conditions under which cooperative norms self-organize in populations of 100k LLM agents without explicit reward — directly tests assumptions behind MIMIC's social simulation design.",
+      card:{one_liner:"Cooperative norms can self-organize in large LLM-agent populations without explicit reward.",
+            key_idea:"Agent-based simulation of 100k LLM agents with local interaction rules; norms tracked via convergence metrics.",
+            evaluation:"Evaluated across population sizes and interaction topologies against random and centralized baselines; trends are consistent but single-environment.",
+            limitation:"Findings are simulation-only; transfer to human-AI hybrid groups is untested.",
+            from_body:true},
       authors:"Tanaka, R. et al.", ref:"arXiv:2506.01187", date:"2026-05-30",
       url:"https://arxiv.org/abs/2506.01187" },
     { kind:"funding", project:"MIMIC", category:"TechCrunch", relevance:0.82,
@@ -228,12 +255,14 @@ const SAMPLE = {
       tldr:"FUNDING",
       highlight:"A multi-agent simulation startup scaling exactly the kind of agent-based society platform MIMIC studies — worth tracking as a potential tool or benchmark source.",
       funding:"Cogent · Series B · $40M",
+      image:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F2B340'/%3E%3Cstop offset='1' stop-color='%230e1422'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='160' height='100' fill='url(%23g)'/%3E%3Ccircle cx='118' cy='34' r='26' fill='%23ffffff' opacity='0.12'/%3E%3C/svg%3E",
       authors:"", ref:"TechCrunch", date:"2026-05-27",
       url:"https://news.example.com/cogent" },
     { kind:"press", project:"RwB", category:"Press", relevance:0.86,
       title:"Acme Robotics unveils a humanoid for in-the-wild manipulation",
       tldr:"PRODUCT LAUNCH",
       highlight:"A humanoid aimed at real-world warehouse manipulation and cross-environment deployment — overlaps with RwB's in-the-wild generalization goals.",
+      image:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF7A66'/%3E%3Cstop offset='1' stop-color='%230e1422'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='160' height='100' fill='url(%23h)'/%3E%3Crect x='96' y='30' width='40' height='44' rx='6' fill='%23ffffff' opacity='0.14'/%3E%3C/svg%3E",
       authors:"", ref:"Business Wire", date:"2026-05-28",
       url:"https://news.example.com/acme" },
     { kind:"paper", project:"HyECHO", category:"cs.HC", relevance:0.88,
@@ -274,12 +303,43 @@ function buildSlide(s,i,total){
   const rel=Math.round((s.relevance ?? 0)*100);
   const kind=(s.kind||'paper');
   const kindLabel={paper:'PAPER',press:'PRESS',funding:'FUNDING'}[kind]||kind.toUpperCase();
+  if(s._isCard && s.card){
+    const c=s.card;
+    el.innerHTML=`
+    <div class="spine"></div>
+    <div class="col">
+      <div class="eyebrow">
+        <span class="tag">${p.label}</span>
+        <span class="kind">SUMMARY</span>
+        ${s.tier==='related'?'<span class="related">RELATED</span>':''}
+        <span class="cardSrc">${c.from_body?'from full text':'from abstract'}</span>
+      </div>
+      <h1 class="title cardTitle">${esc(s.title||'')}</h1>
+      <div class="card">
+        <div class="cardRow"><div class="cardLab">One-line Takeaway</div><div class="cardVal">${esc(c.one_liner||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Key Idea</div><div class="cardVal">${esc(c.key_idea||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Evaluation</div><div class="cardVal">${esc(c.evaluation||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Limitation</div><div class="cardVal">${esc(c.limitation||'')}</div></div>
+      </div>
+    </div>
+    <div class="rail">
+      <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
+      <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
+      <div class="qr ${s.url?'':'empty'}">
+        <div class="box" data-url="${esc(s.url||'')}"></div>
+        <div class="lab">scan to read</div>
+      </div>
+    </div>`;
+    return el;
+  }
+  if(s.image){ el.classList.add('has-media'); }
   el.innerHTML=`
     <div class="spine"></div>
     <div class="col">
       <div class="eyebrow">
         <span class="tag">${p.label}</span>
         <span class="kind ${kind==='funding'?'funding':''}">${kindLabel}</span>
+        ${s.tier==='related'?'<span class="related">RELATED</span>':''}
         <span class="cat">${esc(s.category||'')}</span>
         <span class="rel">relevance ${rel}%
           <span class="bar"><i style="width:${rel}%"></i></span>
@@ -293,6 +353,7 @@ function buildSlide(s,i,total){
     </div>
     <div class="rail">
       <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
+      ${s.image?`<div class="media"><img src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()"></div>`:''}
       <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
       <div class="qr ${s.url?'':'empty'}">
         <div class="box" data-url="${esc(s.url||'')}"></div>
@@ -306,7 +367,13 @@ function render(data){
   const meta=data.meta||{};
   document.getElementById('feedTitle').textContent=meta.title||'This Week in Research';
   document.getElementById('feedSub').textContent=meta.subtitle||'ARXIV LAB FEED';
-  slides=data.slides||[];
+  // 各論文の紹介スライドの直後に、まとめカードのスライドを差し込む
+  const views=[];
+  (data.slides||[]).forEach(s=>{
+    views.push(s);
+    if(s.kind==='paper' && s.card){ views.push(Object.assign({},s,{_isCard:true})); }
+  });
+  slides=views;
   stage.innerHTML=''; dotsEl.innerHTML='';
   slides.forEach((s,i)=>{
     stage.appendChild(buildSlide(s,i,slides.length));

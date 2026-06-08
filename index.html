@@ -457,7 +457,9 @@ document.addEventListener('keydown',e=>{
 /* data load + auto refresh */
 async function load(){
   try{
-    const r=await fetch(CONFIG.dataUrl,{cache:'no-store'});
+    // キャッシュ回避: no-store に加え毎回URLを変える(CDN/プロキシは?クエリ込みでキャッシュするため)
+    const u=CONFIG.dataUrl+(CONFIG.dataUrl.includes('?')?'&':'?')+'v='+Date.now();
+    const r=await fetch(u,{cache:'no-store'});
     if(r.ok){ const j=await r.json(); if(j&&j.slides&&j.slides.length){ render(j); schedule(); return; } }
   }catch(e){/* file:// では fetch 不可 → data.js / サンプルへ */}
   // data.js が読み込んだ週次データ(サーバ不要)。新しい data.js は定期リロードで反映される

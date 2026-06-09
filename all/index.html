@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This Week in Research — Lab Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Spectral:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0e15;
+    --bg2:#0e1422;
+    --ink:#eef3f8;
+    --muted:#8593a6;
+    --faint:#566174;
+    --line:rgba(255,255,255,.08);
+    --line2:rgba(255,255,255,.04);
+    --accent:#9da8ff;             /* set per slide */
+    --accent-soft:rgba(157,168,255,.16);
+    --disp:"Fraunces","Noto Serif JP",serif;
+    --body:"Spectral","Noto Serif JP",serif;
+    --mono:"JetBrains Mono","Noto Sans JP",monospace;
+    --jp:"Noto Sans JP",sans-serif;
+    --pad:clamp(28px,4.2vw,84px);
+    --slide-secs:13;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+    cursor:none;
+  }
+  body.show-cursor{cursor:default}
+
+  /* ---- atmospheric background ---- */
+  .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:
+      radial-gradient(120% 90% at 80% -10%, var(--bg2), var(--bg) 60%);}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.20;
+      transition:background 1.4s ease;mix-blend-mode:screen}
+  .blob.a{width:48vw;height:48vw;top:-14vw;right:-10vw;background:var(--accent)}
+  .blob.b{width:40vw;height:40vw;bottom:-16vw;left:-8vw;background:var(--accent);opacity:.12;
+      animation:drift 26s ease-in-out infinite alternate}
+  @keyframes drift{from{transform:translate(0,0)}to{transform:translate(6vw,-4vw)}}
+  .grid{position:absolute;inset:0;opacity:.5;
+      background-image:linear-gradient(var(--line2) 1px,transparent 1px),
+                       linear-gradient(90deg,var(--line2) 1px,transparent 1px);
+      background-size:64px 64px;mask:radial-gradient(120% 100% at 50% 30%,#000 40%,transparent 95%)}
+  .grain{position:absolute;inset:0;opacity:.05;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* ---- frame ---- */
+  .frame{position:relative;z-index:2;height:100%;display:flex;flex-direction:column}
+
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+      padding:clamp(18px,2.4vw,34px) var(--pad) 0;font-family:var(--mono)}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);
+      box-shadow:0 0 14px var(--accent);transition:background 1s,box-shadow 1s}
+  .brand .ttl{font-family:var(--jp);font-weight:700;letter-spacing:.14em;font-size:clamp(12px,1.05vw,16px)}
+  .brand .sub{color:var(--faint);font-size:clamp(10px,.8vw,12px);letter-spacing:.18em;text-transform:uppercase}
+  .clock{text-align:right;color:var(--muted);font-size:clamp(11px,.95vw,15px);letter-spacing:.08em}
+  .clock .t{color:var(--ink);font-weight:500}
+  .clock .c{color:var(--faint);font-size:.8em;letter-spacing:.22em}
+
+  /* ---- stage ---- */
+  .stage{flex:1;position:relative;display:flex}
+  .slide{position:absolute;inset:0;display:flex;padding:clamp(20px,2.6vw,40px) var(--pad);
+      opacity:0;transform:translateY(22px) scale(.995);
+      transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);
+      pointer-events:none}
+  .slide.active{opacity:1;transform:none}
+  .spine{width:5px;border-radius:4px;background:var(--accent);margin-right:clamp(22px,2.4vw,46px);
+      box-shadow:0 0 24px var(--accent-soft);flex:none}
+  .col{flex:1;display:flex;flex-direction:column;min-width:0}
+
+  .eyebrow{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-family:var(--mono);
+      font-size:clamp(11px,1vw,15px);letter-spacing:.1em;margin-bottom:clamp(14px,1.6vw,26px)}
+  .tag{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+      background:var(--accent-soft);color:var(--accent);font-family:var(--jp);font-weight:700;
+      letter-spacing:.06em}
+  .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .kind{display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;
+      border:1px solid var(--line);color:var(--muted);font-family:var(--mono);
+      font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.85em}
+  .kind.funding{border-color:var(--accent-soft);color:var(--accent)}
+  .related{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;
+      border:1px dashed var(--line);color:var(--faint);font-family:var(--mono);
+      font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.78em}
+  .cat{color:var(--faint)}
+  .rel{display:flex;align-items:center;gap:9px;color:var(--muted);margin-left:auto}
+  .rel .bar{width:84px;height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+  .rel .bar i{display:block;height:100%;background:var(--accent);border-radius:3px;
+      box-shadow:0 0 10px var(--accent-soft)}
+
+  .tldr{font-family:var(--mono);color:var(--accent);font-size:clamp(12px,1.0vw,16px);
+      letter-spacing:.04em;margin-bottom:clamp(8px,1.0vw,14px);opacity:.92}
+  h1.title{font-family:var(--disp);font-weight:600;line-height:1.07;margin:0;
+      font-size:clamp(22px,2.7vw,40px);letter-spacing:-.01em;
+      text-wrap:balance;max-width:24ch}
+  h1.title.cardTitle{font-size:clamp(20px,2.4vw,34px);opacity:.92;margin-bottom:6px;max-width:46ch}
+  .card{display:grid;grid-template-columns:1fr 1fr;
+      gap:clamp(16px,2.4vw,40px) clamp(28px,3.2vw,64px);
+      margin-top:clamp(12px,1.6vw,24px);max-width:none;width:100%;
+      flex:1;min-height:0;align-content:space-evenly}
+  .cardRow{display:flex;flex-direction:column;gap:6px;min-width:0;
+      border-left:2px solid var(--accent-soft);padding-left:18px}
+  .cardLab{font-family:var(--mono);font-size:.82em;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--accent)}
+  .cardVal{font-family:var(--jp);color:#d6deea;line-height:1.5;font-size:clamp(16px,1.5vw,24px)}
+  .cardSrc{font-family:var(--mono);font-size:.72em;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--faint)}
+  .highlight{font-family:var(--jp);font-weight:400;color:#d6deea;line-height:1.5;
+      font-size:clamp(15px,1.35vw,21px);margin-top:clamp(14px,1.6vw,26px);max-width:46ch;
+      border-left:2px solid var(--accent-soft);padding-left:clamp(16px,1.4vw,26px);
+      display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:10;overflow:hidden}
+  .authors{margin-top:auto;padding-top:clamp(18px,2vw,30px);color:var(--muted);
+      font-family:var(--body);font-style:italic;font-size:clamp(14px,1.15vw,20px)}
+  .funding{margin-top:clamp(14px,1.5vw,22px);font-family:var(--mono);color:var(--accent);
+      font-size:clamp(14px,1.3vw,22px);letter-spacing:.04em;
+      display:inline-flex;gap:10px;align-items:center}
+  .funding::before{content:"◆";font-size:.7em;opacity:.8}
+
+  /* right meta rail */
+  .rail{width:clamp(190px,24vw,380px);flex:none;display:flex;flex-direction:column;
+      align-items:flex-end;justify-content:flex-start;gap:clamp(12px,1.4vw,20px);text-align:right;
+      margin-left:clamp(22px,2.4vw,48px);font-family:var(--mono)}
+  /* 画像のあるスライドは右側を広げ、画像を大きく(画面の約1/6) */
+  .slide.has-media .rail{width:clamp(280px,40vw,940px)}
+  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;
+      border:1px solid var(--line);background:var(--bg2);box-shadow:0 12px 34px rgba(0,0,0,.4)}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .rail .idx{font-family:var(--disp);font-weight:400;font-size:clamp(34px,4.4vw,76px);
+      line-height:.8;color:var(--accent);opacity:.9}
+  .rail .idx small{font-size:.32em;color:var(--faint);letter-spacing:.1em}
+  .qr{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:auto}
+  .qr .box{background:#fff;padding:9px;border-radius:10px;width:108px;height:108px;
+      display:flex;align-items:center;justify-content:center}
+  .qr .box canvas,.qr .box img{display:block;width:100%!important;height:100%!important}
+  .qr .lab{color:var(--faint);font-family:var(--jp);font-size:clamp(10px,.78vw,12px);letter-spacing:.08em}
+  .qr.empty{visibility:hidden}
+  .arxiv{color:var(--muted);font-size:clamp(11px,.92vw,15px);letter-spacing:.06em}
+  .arxiv b{color:var(--ink);font-weight:500}
+
+  /* ---- footer / progress ---- */
+  footer{display:flex;align-items:center;gap:20px;padding:0 var(--pad) clamp(16px,2vw,30px)}
+  .dots{display:flex;gap:8px;flex-wrap:wrap;flex:1}
+  .dots b{width:26px;height:4px;border-radius:2px;background:rgba(255,255,255,.13);
+      transition:background .4s,width .4s;cursor:pointer}
+  .dots b.on{background:var(--accent);width:40px}
+  .status{font-family:var(--mono);color:var(--faint);font-size:clamp(10px,.8vw,13px);
+      letter-spacing:.16em;display:flex;align-items:center;gap:10px}
+  .status .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);
+      animation:pulse 2s infinite}
+  .status.paused .pulse{animation:none;background:var(--faint)}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .progress{position:fixed;left:0;bottom:0;height:4px;width:100%;z-index:5;background:rgba(255,255,255,.05)}
+  .progress i{display:block;height:100%;width:0;background:var(--accent);
+      box-shadow:0 0 16px var(--accent)}
+  .progress i.run{animation:fill calc(var(--slide-secs)*1s) linear forwards}
+  @keyframes fill{from{width:0}to{width:100%}}
+
+  .hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:6;
+      font-family:var(--mono);color:var(--faint);font-size:11px;letter-spacing:.14em;
+      opacity:0;transition:opacity .4s;background:rgba(10,14,21,.7);padding:7px 14px;border-radius:8px;
+      border:1px solid var(--line)}
+  body.show-cursor .hint{opacity:.8}
+
+  @media (max-aspect-ratio:1/1){
+    .rail{display:none}
+    h1.title{font-size:clamp(30px,8vw,56px);max-width:none}
+    .card{grid-template-columns:1fr;max-width:none}
+    .highlight{font-size:clamp(16px,4.4vw,24px)}
+  }
+</style>
+</head>
+<body>
+  <div class="bg">
+    <div class="blob a"></div><div class="blob b"></div>
+    <div class="grid"></div><div class="grain"></div>
+  </div>
+
+  <div class="frame">
+    <header>
+      <div class="brand">
+        <span class="dot"></span>
+        <div>
+          <div class="ttl" id="feedTitle">This Week in Research</div>
+          <div class="sub" id="feedSub">ARXIV · PRESS · FUNDING</div>
+        </div>
+      </div>
+      <div class="clock">
+        <div class="t" id="clockT">--:--</div>
+        <div class="c" id="clockD">----</div>
+      </div>
+    </header>
+
+    <div class="stage" id="stage"></div>
+
+    <footer>
+      <div class="dots" id="dots"></div>
+      <div class="status" id="status"><span class="pulse"></span><span id="statusTxt">AUTO</span></div>
+    </footer>
+  </div>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div class="hint">SPACE pause · ← → navigate · F fullscreen</div>
+
+<!-- 週次データ。サーバ不要(file://)でも <script> なら読める。無ければ fetch/サンプルにフォールバック -->
+<script src="data.js" onerror="window.__noDataJs=true"></script>
+<script>
+/* ============================================================
+   設定 / Config
+   ============================================================ */
+const CONFIG = {
+  slideSeconds: 60,                 // 1枚あたりの表示秒数(切替の間隔)
+  dataUrl: "highlights.json",       // 生成物を置けば自動で読む(無ければ下のサンプル)
+  refreshMinutes: 30,               // データ再読込の間隔
+  fullReloadHours: 6                // つけっぱなし対策＋file://での新データ反映: この間隔でページ全体を再読込
+};
+
+/* プロジェクト定義: 色とラベルを足すだけで増やせる */
+const PROJECTS = {
+  MIMIC:       { label:"MIMIC",     color:"#F2B340" },
+  HyECHO:      { label:"HyECHO",    color:"#4FD1C5" },
+  RwB:         { label:"RwB",       color:"#FF7A66" },
+  MOSAIC:      { label:"MOSAIC",    color:"#8BD450" },
+  "ADAM-CHAT": { label:"ADAM-CHAT", color:"#B07BE8" },
+  GENERAL:     { label:"General",   color:"#9DA8FF" }
+};
+
+/* ============================================================
+   サンプルデータ (highlights.json が無いとき用)
+   ※ ここがそのまま JSON スキーマです
+   ============================================================ */
+const SAMPLE = {
+  meta:{ title:"This Week in Research", subtitle:"ARXIV · PRESS · FUNDING", generated:"2026-06-02" },
+  slides:[
+    { kind:"paper", project:"MIMIC", category:"cs.MA", relevance:0.94,
+      title:"Emergent norms in large-scale multi-agent LLM societies",
+      tldr:"NORM EMERGENCE @ SCALE",
+      highlight:"Identifies the conditions under which cooperative norms self-organize in populations of 100k LLM agents without explicit reward — directly tests assumptions behind MIMIC's social simulation design.",
+      card:{one_liner:"Cooperative norms can self-organize in large LLM-agent populations without explicit reward.",
+            key_idea:"Agent-based simulation of 100k LLM agents with local interaction rules; norms tracked via convergence metrics.",
+            evaluation:"Evaluated across population sizes and interaction topologies against random and centralized baselines; trends are consistent but single-environment.",
+            limitation:"Findings are simulation-only; transfer to human-AI hybrid groups is untested.",
+            from_body:true},
+      authors:"Tanaka, R. et al.", ref:"arXiv:2506.01187", date:"2026-05-30",
+      url:"https://arxiv.org/abs/2506.01187" },
+    { kind:"funding", project:"MIMIC", category:"TechCrunch", relevance:0.82,
+      title:"AI-agent startup Cogent raises $40M Series B for simulation platform",
+      tldr:"FUNDING",
+      highlight:"A multi-agent simulation startup scaling exactly the kind of agent-based society platform MIMIC studies — worth tracking as a potential tool or benchmark source.",
+      funding:"Cogent · Series B · $40M",
+      image:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F2B340'/%3E%3Cstop offset='1' stop-color='%230e1422'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='160' height='100' fill='url(%23g)'/%3E%3Ccircle cx='118' cy='34' r='26' fill='%23ffffff' opacity='0.12'/%3E%3C/svg%3E",
+      authors:"", ref:"TechCrunch", date:"2026-05-27",
+      url:"https://news.example.com/cogent" },
+    { kind:"press", project:"RwB", category:"Press", relevance:0.86,
+      title:"Acme Robotics unveils a humanoid for in-the-wild manipulation",
+      tldr:"PRODUCT LAUNCH",
+      highlight:"A humanoid aimed at real-world warehouse manipulation and cross-environment deployment — overlaps with RwB's in-the-wild generalization goals.",
+      image:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 100'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF7A66'/%3E%3Cstop offset='1' stop-color='%230e1422'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='160' height='100' fill='url(%23h)'/%3E%3Crect x='96' y='30' width='40' height='44' rx='6' fill='%23ffffff' opacity='0.14'/%3E%3C/svg%3E",
+      authors:"", ref:"Business Wire", date:"2026-05-28",
+      url:"https://news.example.com/acme" },
+    { kind:"paper", project:"HyECHO", category:"cs.HC", relevance:0.88,
+      title:"Non-contact sensing of group state during human-AI interaction",
+      tldr:"GROUP-STATE SENSING",
+      highlight:"Estimates engagement and tension in mixed human-AI groups in real time from voice, gaze and pause cues — a feature design that maps onto HyECHO's hybrid state understanding.",
+      authors:"Müller, A. & Sato, K.", ref:"arXiv:2505.20431", date:"2026-05-27",
+      url:"https://arxiv.org/abs/2505.20431" },
+    { kind:"paper", project:"RwB", category:"cs.RO", relevance:0.91,
+      title:"Robust cross-environment in-the-wild embodied navigation",
+      tldr:"CROSS-ENV EMBODIMENT",
+      highlight:"Transfers policies to unseen indoor-outdoor environments without retraining and releases a benchmark — squarely on RwB's generalization challenge in real, cross-environment, in-the-wild settings.",
+      authors:"Lopez, M. et al.", ref:"arXiv:2506.00298", date:"2026-05-29",
+      url:"https://arxiv.org/abs/2506.00298" },
+    { kind:"paper", project:"MOSAIC", category:"cs.CV", relevance:0.89,
+      title:"Ego-exo proficiency estimation for procedural assembly tasks",
+      tldr:"PROFICIENCY @ EGO-EXO",
+      highlight:"Estimates fine-grained human skill from synchronized first- and third-person video and feeds it into an adaptive coaching loop — maps directly onto MOSAIC's proficiency-estimation and coaching thrusts.",
+      card:{one_liner:"Synchronized ego-exo video yields fine-grained, real-time human proficiency estimates.",
+            key_idea:"Knowledge distillation aligns ego and exo encoders; proficiency head trained on procedural assembly with force-derived supervision.",
+            evaluation:"Evaluated on Ego-Exo4D and an in-house assembly set against single-view baselines; gains are consistent but domain-limited.",
+            limitation:"Tested only on assembly; tacit-skill and chemistry-lab transfer remain untested.",
+            from_body:true},
+      authors:"Ghoddoosian, R. et al.", ref:"arXiv:2506.01521", date:"2026-05-31",
+      url:"https://arxiv.org/abs/2506.01521" },
+    { kind:"paper", project:"ADAM-CHAT", category:"cs.MA", relevance:0.87,
+      title:"Test-time adaptation for zero-shot human-AI coordination",
+      tldr:"TEST-TIME TEAMING",
+      highlight:"An agent that updates its policy at test time to coordinate with unseen partners on Overcooked-AI, using a meta-cognitive monitor to flag and correct misaligned moves — exactly ADAM-CHAT's beyond-ICL teaming direction.",
+      card:{one_liner:"Agents adapt at test time to coordinate with novel partners without joint training.",
+            key_idea:"Meta-learned policy plus a metacognitive correction module that revises actions when partner-intent inference is uncertain.",
+            evaluation:"Evaluated on Overcooked-AI with held-out human proxies against zero-shot-coordination baselines; improves fluency but mostly in-game.",
+            limitation:"Shown only in a 2-player grid task; embodied and multi-party settings untested.",
+            from_body:true},
+      authors:"Tadiparthi, V. et al.", ref:"arXiv:2506.00942", date:"2026-05-30",
+      url:"https://arxiv.org/abs/2506.00942" }
+  ]
+};
+
+/* ============================================================
+   ロジック
+   ============================================================ */
+const stage=document.getElementById('stage');
+const dotsEl=document.getElementById('dots');
+const bar=document.getElementById('bar');
+const statusEl=document.getElementById('status');
+const statusTxt=document.getElementById('statusTxt');
+let slides=[], idx=0, timer=null, paused=false;
+
+document.documentElement.style.setProperty('--slide-secs', CONFIG.slideSeconds);
+
+function proj(p){ return PROJECTS[p] || PROJECTS.GENERAL; }
+
+function buildSlide(s,i,total){
+  const p=proj(s.project);
+  const el=document.createElement('div');
+  el.className='slide';
+  el.style.setProperty('--accent',p.color);
+  el.style.setProperty('--accent-soft',hexA(p.color,.16));
+  const rel=Math.round((s.relevance ?? 0)*100);
+  const kind=(s.kind||'paper');
+  const kindLabel={paper:'PAPER',press:'PRESS',funding:'FUNDING'}[kind]||kind.toUpperCase();
+  if(s._isCard && s.card){
+    const c=s.card;
+    el.innerHTML=`
+    <div class="spine"></div>
+    <div class="col">
+      <div class="eyebrow">
+        <span class="tag">${p.label}</span>
+        <span class="kind">SUMMARY</span>
+        ${s.tier==='related'?'<span class="related">RELATED</span>':''}
+        <span class="cardSrc">${c.from_body?'from full text':'from abstract'}</span>
+      </div>
+      <h1 class="title cardTitle">${esc(s.title||'')}</h1>
+      <div class="card">
+        <div class="cardRow"><div class="cardLab">One-line Takeaway</div><div class="cardVal">${esc(c.one_liner||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Key Idea</div><div class="cardVal">${esc(c.key_idea||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Evaluation</div><div class="cardVal">${esc(c.evaluation||'')}</div></div>
+        <div class="cardRow"><div class="cardLab">Limitation</div><div class="cardVal">${esc(c.limitation||'')}</div></div>
+      </div>
+    </div>
+    <div class="rail">
+      <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
+      <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
+      <div class="qr ${s.url?'':'empty'}">
+        <div class="box" data-url="${esc(s.url||'')}"></div>
+        <div class="lab">scan to read</div>
+      </div>
+    </div>`;
+    return el;
+  }
+  if(s.image){ el.classList.add('has-media'); }
+  el.innerHTML=`
+    <div class="spine"></div>
+    <div class="col">
+      <div class="eyebrow">
+        <span class="tag">${p.label}</span>
+        <span class="kind ${kind==='funding'?'funding':''}">${kindLabel}</span>
+        ${s.tier==='related'?'<span class="related">RELATED</span>':''}
+        <span class="cat">${esc(s.category||'')}</span>
+        <span class="rel">relevance ${rel}%
+          <span class="bar"><i style="width:${rel}%"></i></span>
+        </span>
+      </div>
+      ${s.tldr?`<div class="tldr">${esc(s.tldr)}</div>`:''}
+      <h1 class="title">${esc(s.title||'')}</h1>
+      <div class="highlight">${esc(s.highlight||'')}</div>
+      ${s.funding?`<div class="funding">${esc(s.funding)}</div>`:''}
+      ${s.authors?`<div class="authors">${esc(s.authors)}</div>`:'<div class="authors"></div>'}
+    </div>
+    <div class="rail">
+      <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
+      ${s.image?`<div class="media"><img src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()"></div>`:''}
+      <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
+      <div class="qr ${s.url?'':'empty'}">
+        <div class="box" data-url="${esc(s.url||'')}"></div>
+        <div class="lab">scan to read</div>
+      </div>
+    </div>`;
+  return el;
+}
+
+function render(data){
+  const meta=data.meta||{};
+  document.getElementById('feedTitle').textContent=meta.title||'This Week in Research';
+  document.getElementById('feedSub').textContent=meta.subtitle||'ARXIV LAB FEED';
+  // 各論文の紹介スライドの直後に、まとめカードのスライドを差し込む
+  const views=[];
+  (data.slides||[]).forEach(s=>{
+    views.push(s);
+    if(s.kind==='paper' && s.card){ views.push(Object.assign({},s,{_isCard:true})); }
+  });
+  slides=views;
+  stage.innerHTML=''; dotsEl.innerHTML='';
+  slides.forEach((s,i)=>{
+    stage.appendChild(buildSlide(s,i,slides.length));
+    const d=document.createElement('b');
+    d.onclick=()=>{ go(i); };
+    dotsEl.appendChild(d);
+  });
+  // QRコード描画 (ライブラリが読めた場合のみ)
+  if(window.QRCode){
+    document.querySelectorAll('.qr .box').forEach(b=>{
+      const u=b.dataset.url;
+      if(u){ try{ new QRCode(b,{text:u,width:90,height:90,correctLevel:QRCode.CorrectLevel.M}); }catch(e){} }
+    });
+  } else {
+    document.querySelectorAll('.qr').forEach(q=>q.classList.add('empty'));
+  }
+  idx=0; show(0,true);
+}
+
+function show(i,instant){
+  const els=stage.children;
+  if(!els.length) return;
+  idx=(i+slides.length)%slides.length;
+  [...els].forEach((e,j)=>e.classList.toggle('active',j===idx));
+  [...dotsEl.children].forEach((d,j)=>d.classList.toggle('on',j===idx));
+  // accent をヘッダ/進捗にも反映
+  const c=proj(slides[idx].project).color;
+  document.documentElement.style.setProperty('--accent',c);
+  document.documentElement.style.setProperty('--accent-soft',hexA(c,.16));
+  restartBar(instant);
+}
+
+function restartBar(instant){
+  bar.classList.remove('run'); void bar.offsetWidth;
+  if(!paused && !instant) bar.classList.add('run');
+  else if(!paused){ bar.classList.add('run'); }
+}
+function schedule(){ clearTimeout(timer); if(!paused) timer=setTimeout(()=>go(idx+1),CONFIG.slideSeconds*1000); }
+function go(i){ show(i); schedule(); }
+
+function togglePause(){
+  paused=!paused;
+  statusEl.classList.toggle('paused',paused);
+  statusTxt.textContent=paused?'PAUSED':'AUTO';
+  if(paused){ clearTimeout(timer); bar.classList.remove('run'); }
+  else { restartBar(); schedule(); }
+}
+
+/* utils */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function hexA(hex,a){const h=hex.replace('#','');const n=parseInt(h.length===3?h.split('').map(x=>x+x).join(''):h,16);
+  return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`;}
+
+/* clock */
+function tick(){
+  const d=new Date();
+  document.getElementById('clockT').textContent=
+    d.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('clockD').textContent=
+    d.toLocaleDateString('en-US',{month:'long',day:'numeric',weekday:'short'}).toUpperCase();
+}
+setInterval(tick,1000); tick();
+
+/* controls */
+let cursorTO;
+document.addEventListener('mousemove',()=>{
+  document.body.classList.add('show-cursor');
+  clearTimeout(cursorTO);
+  cursorTO=setTimeout(()=>document.body.classList.remove('show-cursor'),2500);
+});
+document.addEventListener('keydown',e=>{
+  if(e.code==='Space'){e.preventDefault();togglePause();}
+  else if(e.code==='ArrowRight'){go(idx+1);}
+  else if(e.code==='ArrowLeft'){go(idx-1);}
+  else if(e.key==='f'||e.key==='F'){
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  }
+});
+
+/* data load + auto refresh */
+async function load(){
+  try{
+    // キャッシュ回避: no-store に加え毎回URLを変える(CDN/プロキシは?クエリ込みでキャッシュするため)
+    const u=CONFIG.dataUrl+(CONFIG.dataUrl.includes('?')?'&':'?')+'v='+Date.now();
+    const r=await fetch(u,{cache:'no-store'});
+    if(r.ok){ const j=await r.json(); if(j&&j.slides&&j.slides.length){ render(j); schedule(); return; } }
+  }catch(e){/* file:// では fetch 不可 → data.js / サンプルへ */}
+  // data.js が読み込んだ週次データ(サーバ不要)。新しい data.js は定期リロードで反映される
+  if(window.HIGHLIGHTS && window.HIGHLIGHTS.slides && window.HIGHLIGHTS.slides.length){
+    render(window.HIGHLIGHTS); schedule(); return;
+  }
+  render(SAMPLE); schedule();
+}
+load();
+setInterval(load, CONFIG.refreshMinutes*60*1000);
+// 長時間つけっぱなしでの状態ドリフト/リーク対策に、定期的にページ全体を再読込
+if(CONFIG.fullReloadHours){
+  setTimeout(()=>location.reload(), CONFIG.fullReloadHours*3600*1000);
+}
+</script>
+</body>
+</html>

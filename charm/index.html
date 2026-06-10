@@ -212,14 +212,14 @@
   <div class="hint">SPACE pause · ← → navigate · F fullscreen</div>
 
 <!-- 週次データ。サーバ不要(file://)でも <script> なら読める。無ければ fetch/サンプルにフォールバック -->
-<script src="data_hss.js" onerror="window.__noDataJs=true"></script>
+<script src="data_charm.js" onerror="window.__noDataJs=true"></script>
 <script>
 /* ============================================================
    設定 / Config
    ============================================================ */
 const CONFIG = {
   slideSeconds: 60,                 // 1枚あたりの表示秒数(切替の間隔)
-  dataUrl: "highlights_hss.json",       // 生成物を置けば自動で読む(無ければ下のサンプル)
+  dataUrl: "highlights_charm.json",       // 生成物を置けば自動で読む(無ければ下のサンプル)
   refreshMinutes: 30,               // データ再読込の間隔
   fullReloadHours: 6                // つけっぱなし対策＋file://での新データ反映: この間隔でページ全体を再読込
 };
@@ -236,7 +236,7 @@ const PROJECTS = {
 };
 
 /* ============================================================
-   サンプルデータ (highlights_hss.json が無いとき用)
+   サンプルデータ (highlights_charm.json が無いとき用)
    ※ ここがそのまま JSON スキーマです
    ============================================================ */
 const SAMPLE = {
@@ -486,8 +486,8 @@ async function load(){
     const u=CONFIG.dataUrl+(CONFIG.dataUrl.includes('?')?'&':'?')+'v='+Date.now();
     const r=await fetch(u,{cache:'no-store'});
     if(r.ok){ const j=await r.json(); if(j&&j.slides&&j.slides.length){ render(j); schedule(); return; } }
-  }catch(e){/* file:// では fetch 不可 → data_hss.js / サンプルへ */}
-  // data_hss.js が読み込んだ週次データ(サーバ不要)。新しい data_hss.js は定期リロードで反映される
+  }catch(e){/* file:// では fetch 不可 → data_charm.js / サンプルへ */}
+  // data_charm.js が読み込んだ週次データ(サーバ不要)。新しい data_charm.js は定期リロードで反映される
   if(window.HIGHLIGHTS && window.HIGHLIGHTS.slides && window.HIGHLIGHTS.slides.length){
     render(window.HIGHLIGHTS); schedule(); return;
   }

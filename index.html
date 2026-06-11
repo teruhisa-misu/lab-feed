@@ -132,15 +132,13 @@
       margin-left:clamp(22px,2.4vw,48px);font-family:var(--mono)}
   /* 画像のあるスライドは右側を広げ、画像を大きく(画面の約1/6) */
   .slide.has-media .rail{width:clamp(280px,40vw,940px)}
-  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;
+  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;position:relative;
       border:1px solid var(--line);background:var(--bg2);box-shadow:0 12px 34px rgba(0,0,0,.4)}
-  .media img{width:100%;height:100%;object-fit:cover;display:block}
-  /* デスクトップ向け: 画像/QRをクリックで原典へ。サイネージでは無害(カーソルが無いだけ) */
-  .media a.srclink{display:block;width:100%;height:100%;cursor:pointer}
-  .media a.srclink img{transition:opacity .15s ease,transform .15s ease}
-  .media a.srclink:hover img{opacity:.9;transform:scale(1.02)}
-  .qr .box{transition:box-shadow .15s ease}
-  .qr .box:hover{box-shadow:0 0 0 2px var(--accent)}
+  /* 背景: 同じ画像を cover で敷き、ぼかして余白(レターボックス帯)を埋める */
+  .media .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      filter:blur(24px) brightness(.55) saturate(1.1);transform:scale(1.2);z-index:0}
+  /* 前景: contain で全体を表示(切り取り無し)。背景の上に重ねる */
+  .media .fg{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block}
   .rail .idx{font-family:var(--disp);font-weight:400;font-size:clamp(34px,4.4vw,76px);
       line-height:.8;color:var(--accent);opacity:.9}
   .rail .idx small{font-size:.32em;color:var(--faint);letter-spacing:.1em}
@@ -232,10 +230,13 @@ const CONFIG = {
 
 /* プロジェクト定義: 色とラベルを足すだけで増やせる */
 const PROJECTS = {
-  MIMIC:   { label:"MIMIC",   color:"#F2B340" },
-  HyECHO:  { label:"HyECHO",  color:"#4FD1C5" },
-  RwB:     { label:"RwB",     color:"#FF7A66" },
-  GENERAL: { label:"General", color:"#9DA8FF" }
+  MIMIC:       { label:"MIMIC",     color:"#F2B340" },
+  HyECHO:      { label:"HyECHO",    color:"#4FD1C5" },
+  RwB:         { label:"RwB",       color:"#FF7A66" },
+  MOSAIC:      { label:"MOSAIC",    color:"#8BD450" },
+  "ADAM-CHAT": { label:"ADAM-CHAT", color:"#B07BE8" },
+  CHARM:       { label:"CHARM",     color:"#EC6FB0" },
+  GENERAL:     { label:"General",   color:"#9DA8FF" }
 };
 
 /* ============================================================
@@ -282,7 +283,29 @@ const SAMPLE = {
       tldr:"CROSS-ENV EMBODIMENT",
       highlight:"Transfers policies to unseen indoor-outdoor environments without retraining and releases a benchmark — squarely on RwB's generalization challenge in real, cross-environment, in-the-wild settings.",
       authors:"Lopez, M. et al.", ref:"arXiv:2506.00298", date:"2026-05-29",
-      url:"https://arxiv.org/abs/2506.00298" }
+      url:"https://arxiv.org/abs/2506.00298" },
+    { kind:"paper", project:"MOSAIC", category:"cs.CV", relevance:0.89,
+      title:"Ego-exo proficiency estimation for procedural assembly tasks",
+      tldr:"PROFICIENCY @ EGO-EXO",
+      highlight:"Estimates fine-grained human skill from synchronized first- and third-person video and feeds it into an adaptive coaching loop — maps directly onto MOSAIC's proficiency-estimation and coaching thrusts.",
+      card:{one_liner:"Synchronized ego-exo video yields fine-grained, real-time human proficiency estimates.",
+            key_idea:"Knowledge distillation aligns ego and exo encoders; proficiency head trained on procedural assembly with force-derived supervision.",
+            evaluation:"Evaluated on Ego-Exo4D and an in-house assembly set against single-view baselines; gains are consistent but domain-limited.",
+            limitation:"Tested only on assembly; tacit-skill and chemistry-lab transfer remain untested.",
+            from_body:true},
+      authors:"Ghoddoosian, R. et al.", ref:"arXiv:2506.01521", date:"2026-05-31",
+      url:"https://arxiv.org/abs/2506.01521" },
+    { kind:"paper", project:"ADAM-CHAT", category:"cs.MA", relevance:0.87,
+      title:"Test-time adaptation for zero-shot human-AI coordination",
+      tldr:"TEST-TIME TEAMING",
+      highlight:"An agent that updates its policy at test time to coordinate with unseen partners on Overcooked-AI, using a meta-cognitive monitor to flag and correct misaligned moves — exactly ADAM-CHAT's beyond-ICL teaming direction.",
+      card:{one_liner:"Agents adapt at test time to coordinate with novel partners without joint training.",
+            key_idea:"Meta-learned policy plus a metacognitive correction module that revises actions when partner-intent inference is uncertain.",
+            evaluation:"Evaluated on Overcooked-AI with held-out human proxies against zero-shot-coordination baselines; improves fluency but mostly in-game.",
+            limitation:"Shown only in a 2-player grid task; embodied and multi-party settings untested.",
+            from_body:true},
+      authors:"Tadiparthi, V. et al.", ref:"arXiv:2506.00942", date:"2026-05-30",
+      url:"https://arxiv.org/abs/2506.00942" }
   ]
 };
 
@@ -359,7 +382,7 @@ function buildSlide(s,i,total){
     </div>
     <div class="rail">
       <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
-      ${s.image?`<div class="media">${s.url?`<a class="srclink" href="${esc(s.url)}" target="_blank" rel="noopener" title="Open source ↗">`:``}<img src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()">${s.url?`</a>`:``}</div>`:''}
+      ${s.image?`<div class="media"><img class="bg" src="${esc(s.image)}" alt="" aria-hidden="true" onerror="this.remove()"><img class="fg" src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()"></div>`:''}
       <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
       <div class="qr ${s.url?'':'empty'}">
         <div class="box" data-url="${esc(s.url||'')}"></div>
@@ -391,12 +414,7 @@ function render(data){
   if(window.QRCode){
     document.querySelectorAll('.qr .box').forEach(b=>{
       const u=b.dataset.url;
-      if(u){
-        try{ new QRCode(b,{text:u,width:90,height:90,correctLevel:QRCode.CorrectLevel.M}); }catch(e){}
-        b.style.cursor='pointer';                 // デスクトップ: クリックで原典を開く
-        b.title='Open source ↗';
-        b.addEventListener('click',()=>window.open(u,'_blank','noopener'));
-      }
+      if(u){ try{ new QRCode(b,{text:u,width:90,height:90,correctLevel:QRCode.CorrectLevel.M}); }catch(e){} }
     });
   } else {
     document.querySelectorAll('.qr').forEach(q=>q.classList.add('empty'));

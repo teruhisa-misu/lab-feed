@@ -132,13 +132,9 @@
       margin-left:clamp(22px,2.4vw,48px);font-family:var(--mono)}
   /* 画像のあるスライドは右側を広げ、画像を大きく(画面の約1/6) */
   .slide.has-media .rail{width:clamp(280px,40vw,940px)}
-  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;position:relative;
+  .media{width:100%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;flex:none;
       border:1px solid var(--line);background:var(--bg2);box-shadow:0 12px 34px rgba(0,0,0,.4)}
-  /* 背景: 同じ画像を cover で敷き、ぼかして余白(レターボックス帯)を埋める */
-  .media .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-      filter:blur(24px) brightness(.55) saturate(1.1);transform:scale(1.2);z-index:0}
-  /* 前景: contain で全体を表示(切り取り無し)。背景の上に重ねる */
-  .media .fg{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
   .rail .idx{font-family:var(--disp);font-weight:400;font-size:clamp(34px,4.4vw,76px);
       line-height:.8;color:var(--accent);opacity:.9}
   .rail .idx small{font-size:.32em;color:var(--faint);letter-spacing:.1em}
@@ -382,7 +378,7 @@ function buildSlide(s,i,total){
     </div>
     <div class="rail">
       <div class="idx">${String(i+1).padStart(2,'0')}<small>/${String(total).padStart(2,'0')}</small></div>
-      ${s.image?`<div class="media"><img class="bg" src="${esc(s.image)}" alt="" aria-hidden="true" onerror="this.remove()"><img class="fg" src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()"></div>`:''}
+      ${s.image?`<div class="media"><img src="${esc(s.image)}" alt="" onerror="var sl=this.closest('.slide'); if(sl) sl.classList.remove('has-media'); this.closest('.media').remove()"></div>`:''}
       <div class="arxiv"><b>${esc(s.ref||('arXiv:'+(s.arxiv_id||'—')))}</b><br>${esc(s.date||'')}</div>
       <div class="qr ${s.url?'':'empty'}">
         <div class="box" data-url="${esc(s.url||'')}"></div>

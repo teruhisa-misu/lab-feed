@@ -2,9 +2,32 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "CHARM · pHRI · TACTILE · EXPRESSIVE",
-    "generated": "2026-06-30"
+    "generated": "2026-07-01"
   },
   "slides": [
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 0.9,
+      "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
+      "tldr": "UNIFIED TACTILE LEARNING FOR CONTACT-RICH MANIPULATION",
+      "highlight": "This work introduces a framework for modeling tactile signals as dynamic interaction cues for contact understanding and prediction, supporting the MOSAIC goal of physics/force-based human proficiency estimation.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2606.31723v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "UniTacVLA improves contact-rich robotic manipulation by unifying tactile semantic understanding and future tactile prediction.",
+        "key_idea": "A framework using tactile chain-of-thought reasoning and coarse-to-fine future tactile prediction to create a proactive prior, coupled with a high-frequency action-tactile mixed controller for real-time corrections.",
+        "evaluation": "Evaluated on 8 real-world contact-rich tasks (e.g., insertion, assembly) under clean and perturbed settings; outperformed baselines like TacVLA in success rates.",
+        "limitation": "Susceptible to operator-dependent noise in teleoperated data; unexplored robustness under severe visual occlusion or incomplete language instructions.",
+        "from_body": true
+      },
+      "authors": "Xidong Zhang et al.",
+      "ref": "arXiv:2606.31723v1",
+      "date": "2026-06-30",
+      "url": "https://arxiv.org/abs/2606.31723v1"
+    },
     {
       "kind": "paper",
       "project": "CHARM",
@@ -17,8 +40,8 @@
       "image": "",
       "tier": "match",
       "card": {
-        "one_liner": "A visuo-tactile policy using motion-aware tactile representations and a Mixture-of-Transformers architecture for contact-rich manipulation.",
-        "key_idea": "Combines transient and cumulative tactile motion correlations to distinguish fine-grained contact states, fused via a Mixture-of-Transformers to balance cross-modal interaction and modality-specific properties.",
+        "one_liner": "A visuo-tactile policy using motion correlation and Mixture-of-Transformers for fine-grained contact-rich manipulation.",
+        "key_idea": "Combines transient and cumulative tactile motion correlations for better state representation, fused via a Mixture-of-Transformers architecture to balance cross-modal interaction and modality-specific properties.",
         "evaluation": "Not clearly stated.",
         "limitation": "Not clearly stated.",
         "from_body": false
@@ -40,9 +63,9 @@
       "image": "https://arxiv.org/html/2606.29089v1/figures/tapvla_intro_figure.png",
       "tier": "match",
       "card": {
-        "one_liner": "TAP-VLA integrates tactile feedback into pre-trained VLAs by rendering tactile shear fields as visual annotations.",
-        "key_idea": "Extracts shear fields from visuo-tactile sensors and overlays them as spatially-grounded vectors onto RGB images, avoiding architectural changes and distribution shifts from new modalities.",
-        "evaluation": "Tested on four contact-rich tasks; TAP-VLA achieved 78% success rate, significantly outperforming vision-only and tactile-fusion baselines (all <50%).",
+        "one_liner": "TAP-VLA integrates tactile feedback into pre-trained VLAs by rendering tactile shear as visual annotations.",
+        "key_idea": "Extracts shear fields from visuo-tactile sensors and overlays them as spatially-grounded vectors onto RGB images, avoiding architectural changes and distribution shifts from new input modalities.",
+        "evaluation": "Evaluated on four contact-rich tasks using $\\pi_{0.5}$ VLA; achieved 78% success rate, significantly outperforming vision-only and tactile-fusion baselines.",
         "limitation": "Downsampling discards detailed grasp geometry, and annotations may occlude task-relevant visual content in cluttered scenes.",
         "from_body": true
       },
@@ -58,13 +81,13 @@
       "relevance": 0.9,
       "title": "VibeAct: Vibration to Actions for Contact-Rich Reactive Robot Dexterity",
       "tldr": "VIBROTACTILE SENSING FOR DEXTEROUS MANIPULATION",
-      "highlight": "VibeAct uses piezoelectric microphones to bridge real vibrotactile sensing with simulation-based reinforcement learning via a shared representation of contact and slip. This approach improves success rates in contact-rich tasks like regrasping and insertion by providing rapid tactile feedback.",
+      "highlight": "VibeAct bridges real vibrotactile sensing and simulation-based reinforcement learning using a shared physical representation of contact and slip. This framework enables robot hands to exploit rapid tactile feedback for contact-rich tasks, improving success rates in real-world deployment.",
       "funding": "",
       "image": "https://arxiv.org/html/2606.27344v1/x1.png",
       "tier": "match",
       "card": {
         "one_liner": "VibeAct enables sim-to-real dexterous manipulation by bridging vibrotactile sensing and RL via a shared contact-slip representation.",
-        "key_idea": "A tactile estimator maps real microphone signals to a compact contact/slip representation, which is also computed directly in simulation to train RL policies.",
+        "key_idea": "A tactile estimator maps real piezoelectric microphone signals to a low-dimensional contact/slip representation, which is also computed directly in simulation for RL policy training.",
         "evaluation": "Evaluated on five contact-rich tasks using PPO; outperformed proprioception+point-cloud baselines in simulation and improved success rates on physical hardware deployment.",
         "limitation": "Discards raw vibration details (e.g., texture), depends on accurate object pose tracking for labeling, and requires recalibration for hardware changes.",
         "from_body": true
@@ -78,116 +101,93 @@
       "kind": "paper",
       "project": "CHARM",
       "category": "cs.RO",
-      "relevance": 0.6,
-      "title": "PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies",
-      "tldr": "SELF-REFLECTIVE VLA FRAMEWORK FOR ROBOTIC MANIPULATION",
-      "highlight": "This work introduces a framework that uses physical feasibility evaluation and an LLM-based reflection module to diagnose execution errors and generate corrective guidance. It is relevant to ADAM-CHAT's focus on self-monitoring, self-correction via meta-cognition, and adaptive agent behavior.",
+      "relevance": 0.8,
+      "title": "RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation",
+      "tldr": "DEXTEROUS HUMANOID MANIPULATION DATASET",
+      "highlight": "This dataset of humanoid manipulation behaviors, featuring multi-modal RGB, depth, and tactile feedback, supports the development of embodied social robots and human-robot interaction for RwB.",
       "funding": "",
-      "image": "https://arxiv.org/html/2606.27146v1/x1.png",
+      "image": "",
       "tier": "match",
       "card": {
-        "one_liner": "PhysReflect-VLA enhances VLA policies with real-time physical feasibility checks and self-reflective error correction for robotic manipulation.",
-        "key_idea": "A plug-and-play framework using a bidirectional consistency model (forward/inverse operators) to filter infeasible actions and an LLM-based module to generate corrective guidance from execution discrepancies.",
-        "evaluation": "Evaluated on five real-world contact-rich manipulation tasks; outperformed baselines like OpenVLA with an average success rate gain of 5.4%.",
+        "one_liner": "RoboTacDex is a large-scale multi-modal dataset for humanoid dexterous manipulation using the Unitree G1 robot.",
+        "key_idea": "6k trajectories across 19 tasks and 22 objects, featuring multi-view RGB-D, tactile feedback, and semantic annotations for dual-arm dexterous manipulation.",
+        "evaluation": "Three imitation learning models were tested; results showed successful trials and moderate generalization across various task categories.",
         "limitation": "Not clearly stated.",
-        "from_body": true
+        "from_body": false
       },
-      "authors": "Jiayu Yang et al.",
-      "ref": "arXiv:2606.27146v1",
-      "date": "2026-06-25",
-      "url": "https://arxiv.org/abs/2606.27146v1"
-    },
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
-      "relevance": 0.6,
-      "title": "Bridging Handheld and Teleoperated Supervision for Contact-Rich Manipulation via State-Gated Experts",
-      "tldr": "HYBRID DATA COLLECTION FOR CONTACT-RICH MANIPULATION",
-      "highlight": "The BRIDGE framework combines scalable handheld data with targeted teleoperated demonstrations using a mixture of diffusion policy experts to improve success rates in contact-sensitive tasks.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2606.26603v1/x1.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "BRIDGE improves contact-rich manipulation by routing between handheld-observed and teleoperated-desired action experts based on robot state.",
-        "key_idea": "A mixture-of-diffusion-experts architecture using a state-conditioned MLP router to switch between a base policy (handheld data) and a support head (targeted teleoperation).",
-        "evaluation": "Evaluated on three contact-rich tasks (pulley routing, pipe insertion, battery insertion) against handheld-only and naive-mix baselines; success rates increased by up to 36.7%.",
-        "limitation": "Hard-switching causes control discontinuities; identifying support regions is currently empirical; may scale poorly to long-horizon tasks with many contact regimes.",
-        "from_body": true
-      },
-      "authors": "Vidullan Surendran et al.",
-      "ref": "arXiv:2606.26603v1",
-      "date": "2026-06-25",
-      "url": "https://arxiv.org/abs/2606.26603v1"
+      "authors": "Xinyi Wang et al.",
+      "ref": "arXiv:2606.31836v1",
+      "date": "2026-06-30",
+      "url": "https://arxiv.org/abs/2606.31836v1"
     },
     {
       "kind": "paper",
       "project": "CHARM",
       "category": "cs.RO",
       "relevance": 0.4,
-      "title": "ForesightSafety-VLA: A Unified Diagnostic Safety Benchmark for Vision-Language-Action Models",
-      "tldr": "DIAGNOSTIC SAFETY BENCHMARK FOR VLA MODELS",
-      "highlight": "This work introduces a safety benchmark for vision-language-action models, which is relevant to RwB's focus on embodied social robots and human-robot interaction.",
+      "title": "From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation",
+      "tldr": "GRASP PRETRAINING FOR DEXTEROUS TOOL USE",
+      "highlight": "This research demonstrates that large-scale grasp datasets can be used to pretrain low-level controllers for contact-rich dexterous manipulation and articulated tool use.",
       "funding": "",
-      "image": "https://arxiv.org/html/2606.27079v2/figures/fig0306.jpg",
+      "image": "https://arxiv.org/html/2606.30749v1/figs/teaser_v2.png",
       "tier": "related",
       "card": {
-        "one_liner": "A diagnostic benchmark for VLA models evaluating embodied safety across physical, linguistic, and perceptual dimensions.",
-        "key_idea": "A 13-category safety taxonomy using 66 RoboTwin scenarios, measuring process-level risk via cumulative safety cost (CC) and risk exposure time (RET) across three controlled variation dimensions.",
-        "evaluation": "Evaluated representative VLA baselines (e.g., OpenVLA-oft, RDT, ACT) using a four-quadrant outcome decomposition. Results show pervasive unsafe behavior and high sensitivity to visual/structural changes.",
-        "limitation": "The current release is limited to simulated tabletop manipulation and lacks real-world validation or mobile manipulation scenarios.",
+        "one_liner": "Large-scale grasp datasets can pretrain low-level controllers for complex, articulated dexterous tool-use tasks.",
+        "key_idea": "A hierarchical imitation learning framework combining high-level 16-keypoint sub-goal prediction with a low-level controller pretrained on 355k augmented grasp trajectories (G2D-Pretrain) and then fine-tuned.",
+        "evaluation": "Evaluated on DexCraft simulation benchmark (6 tasks) and real-world tasks; outperformed DP3 by 33.3 percentage points in real-world success.",
+        "limitation": "Relies on manually labeled sub-goals, uses single object instances per task, and lacks tactile feedback.",
         "from_body": true
       },
-      "authors": "Mingyang Lyu et al.",
-      "ref": "arXiv:2606.27079v2",
-      "date": "2026-06-25",
-      "url": "https://arxiv.org/abs/2606.27079v2"
-    },
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
-      "relevance": 0.3,
-      "title": "OpenSPM: An Environment-Transferable Robotic Key Spatial Pose Memory and Closed-Loop High-Frequency Flow-Matching Action Generation Model",
-      "tldr": "HIGH-FREQUENCY ACTION GENERATION VIA SPATIAL POSE MEMORY",
-      "highlight": "OpenSPM introduces a spatial persistent memory framework that combines 6D pose tracking with a conditional flow-matching model to achieve high-frequency robotic manipulation. The system enables environment-transferable action generation with a reported 85.6% success rate across ten LIBERO-GOAL tasks.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2606.29936v1/x1.png",
-      "tier": "related",
-      "card": {
-        "one_liner": "OpenSPM enables high-frequency, environment-transferable robotic manipulation using object-centric spatial pose memory and flow-matching action generation.",
-        "key_idea": "Decomposes manipulation into semantic 3D perception, retrieval of relative key spatial poses from a memory bank, SE(3) transfer, and lightweight conditional flow-matching for action chunks.",
-        "evaluation": "Evaluated on ten LIBERO-GOAL tasks; achieved 85.6% success rate and 1033.3 Hz equivalent frequency, outperforming VLA and diffusion baselines.",
-        "limitation": "Performance depends on initial segmentation/reconstruction quality; struggles with occlusions, visually similar objects, and narrow operation tolerances.",
-        "from_body": true
-      },
-      "authors": "Iok Tong Lei et al.",
-      "ref": "arXiv:2606.29936v1",
+      "authors": "Ying Yuan et al.",
+      "ref": "arXiv:2606.30749v1",
       "date": "2026-06-29",
-      "url": "https://arxiv.org/abs/2606.29936v1"
+      "url": "https://arxiv.org/abs/2606.30749v1"
     },
     {
       "kind": "paper",
       "project": "CHARM",
       "category": "cs.RO",
-      "relevance": 0.3,
+      "relevance": 0.4,
       "title": "Behavior Uncloning: Distilling Mode Redirection into Policy Weights without Inference-Time Steering",
-      "tldr": "DISTILLING MODE REDIRECTION TO SUPPRESS UNDESIRED BEHAVIORS",
-      "highlight": "This work introduces MoRE to redirect policy rollouts toward desired behavior modes, supporting the MOSAIC goal of aligning human-AI intent by suppressing unsafe or undesired modes without inference-time overhead.",
+      "tldr": "SUPPRESSING UNDESIRED BEHAVIOR MODES IN POLICIES",
+      "highlight": "This work introduces MoRE to distill redirection signals into policy weights to suppress undesired behavior modes, supporting the MOSAIC goal of aligning human-AI intent and improving skill acquisition.",
       "funding": "",
       "image": "https://arxiv.org/html/2606.29201v1/x1.png",
       "tier": "related",
       "card": {
         "one_liner": "MoRE distills mode-redirection signals into policy weights to suppress undesired behaviors without inference-time overhead.",
-        "key_idea": "A temporary mode classifier provides a differentiable redirection loss to update policy weights, balanced by a retain loss to preserve task competence and a source-mode probability mask.",
+        "key_idea": "A temporary mode classifier provides a differentiable redirection loss to shift policy weights toward desired modes, balanced by a retain loss to preserve task competence.",
         "evaluation": "Tested on 8 simulated and real-world tasks using Diffusion Policy and $\\pi_{0.5}$ VLA; improved average success rate by 44 percentage points over original policies.",
-        "limitation": "Requires mode-labeled editing data and a classifier interface that exposes mode information before trajectories commit to a specific mode.",
+        "limitation": "Requires mode-labeled editing data or reliably inferable rollouts and a classifier interface that exposes mode information before trajectory commitment.",
         "from_body": true
       },
       "authors": "Hao Wang et al.",
       "ref": "arXiv:2606.29201v1",
       "date": "2026-06-28",
       "url": "https://arxiv.org/abs/2606.29201v1"
+    },
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 0.3,
+      "title": "Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments",
+      "tldr": "HUMAN-TO-HUMANOID ACTION GENERATION FROM EGO-EXO VIDEOS",
+      "highlight": "This framework uses synchronized ego-exo videos to convert human demonstrations into executable humanoid actions, aligning with MOSAIC's focus on ego-exo views and skill acquisition.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2606.32009v1/figures/intro.png",
+      "tier": "related",
+      "card": {
+        "one_liner": "Enables zero-shot humanoid learning by converting ego-exo human videos into executable 60-DoF robot action labels.",
+        "key_idea": "Uses a human-aligned humanoid (PrimeU) and a staged IK pipeline to retarget human motion into controller-aligned joint actions, supervised by FK-aware VLA training.",
+        "evaluation": "Validated via keypoint stability, action tokenizer reconstruction (0.008 MAE), 4.8–7.2x throughput gain, and zero-shot real-robot deployment on tasks like water pouring.",
+        "limitation": "Not clearly stated.",
+        "from_body": true
+      },
+      "authors": "Xiaopeng Lin et al.",
+      "ref": "arXiv:2606.32009v1",
+      "date": "2026-06-30",
+      "url": "https://arxiv.org/abs/2606.32009v1"
     }
   ]
 }

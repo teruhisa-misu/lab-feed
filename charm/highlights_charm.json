@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "CHARM · pHRI · TACTILE · EXPRESSIVE",
-    "generated": "2026-07-03"
+    "generated": "2026-07-06"
   },
   "slides": [
     {
@@ -20,7 +20,7 @@
         "one_liner": "VT-WAM improves contact-rich manipulation by jointly predicting future visual, tactile, and action dynamics.",
         "key_idea": "A flow matching framework using Asymmetric MoT Attention for visual-tactile integration and contact-gated AVTAG to prioritize tactile evidence during physical interaction phases.",
         "evaluation": "Evaluated on six real-world tasks; achieved 71.67% average success rate, significantly outperforming Fast-WAM (45.00%) and OmniVTLA (35.83%).",
-        "limitation": "The current work focuses on individual-task specialization; multi-task training and scaling laws remain unexplored.",
+        "limitation": "The model focuses on individual-task specialization; multi-task training and scaling laws remain unexplored.",
         "from_body": true
       },
       "authors": "Shuai Tian et al.",
@@ -35,15 +35,15 @@
       "relevance": 0.9,
       "title": "UniTacVLA: Unified Tactile Understanding and Prediction in Vision Language Action Models",
       "tldr": "UNIFIED TACTILE LEARNING FOR CONTACT-RICH MANIPULATION",
-      "highlight": "This work introduces a framework for modeling tactile signals as dynamic interaction cues for contact understanding and prediction, aligning with MOSAIC's focus on physics/force-based skill acquisition and ego-exo views in contact-rich tasks like assembly.",
+      "highlight": "This work introduces a framework for modeling tactile signals as dynamic interaction cues for contact understanding and prediction, aligning with MOSAIC's focus on physics/force-based skill estimation and human-AI coadaptation in assembly tasks.",
       "funding": "",
       "image": "https://arxiv.org/html/2606.31723v1/x1.png",
       "tier": "match",
       "card": {
         "one_liner": "UniTacVLA improves contact-rich robotic manipulation by unifying tactile semantic understanding and future tactile prediction.",
-        "key_idea": "A framework using tactile chain-of-thought reasoning and coarse-to-fine future tactile prediction to create a proactive prior, coupled with a high-frequency action-tactile mixed controller for real-time corrections.",
-        "evaluation": "Evaluated on 8 real-world subtasks (adjustment, wiping, insertion, assembly) under clean and perturbed settings; outperformed baselines like π0 and TacVLA in success rates.",
-        "limitation": "Operator-dependent noise in teleoperated data, insufficient exploration of severe visual occlusion, and lack of explicit force/torque signal modeling.",
+        "key_idea": "A framework using tactile chain-of-thought reasoning and coarse-to-fine future tactile prediction to create a proactive prior for a high-frequency action-tactile mixed controller.",
+        "evaluation": "Evaluated on 8 real-world tasks (adjustment, wiping, insertion, assembly) under clean and perturbed settings; outperformed baselines like TacVLA and VTLA in success rates.",
+        "limitation": "Susceptible to operator-dependent noise in teleoperated data and lacks explicit modeling of force/torque signals.",
         "from_body": true
       },
       "authors": "Xidong Zhang et al.",
@@ -58,15 +58,15 @@
       "relevance": 0.8,
       "title": "Imagining the Sense of Touch: Touch-Informed Manipulation via Imagined Tactile Representations",
       "tldr": "TACTILE IMAGINATION FOR SENSORLESS MANIPULATION",
-      "highlight": "TacImag predicts tactile observations from vision and proprioception, enabling touch-informed robotic manipulation without requiring tactile hardware at deployment.",
+      "highlight": "TacImag predicts tactile observations from vision and proprioception, enabling touch-informed manipulation without requiring tactile hardware at deployment.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.01684v1/x1.png",
       "tier": "match",
       "card": {
-        "one_liner": "TacImag enables touch-informed robotic manipulation using only vision and proprioception by imagining tactile observations.",
-        "key_idea": "A conditional diffusion model predicts tactile representations (TacRGB or TacFF) from visual/proprioceptive inputs, providing contact-aware supervision for a frozen manipulation policy during sensor-less deployment.",
-        "evaluation": "Evaluated on 6 simulated and 4 real-world tasks; imagined TacFF improved contact-sensitive tasks by 44.4% on average in real-world tests.",
-        "limitation": "Effectiveness depends strongly on matching the tactile representation (RGB vs. Force Field) to specific task requirements (texture vs. contact).",
+        "one_liner": "TacImag enables touch-informed robotic manipulation using only visual and proprioceptive inputs at deployment time.",
+        "key_idea": "A conditional diffusion model predicts tactile representations (TacRGB or TacFF) from vision and proprioception, providing contact-aware supervision for a frozen, tactile-conditioned manipulation policy.",
+        "evaluation": "Evaluated on 6 simulated and 4 real-world tasks; imagined TacFF improved contact-sensitive tasks by 44.4% on average in real-world trials.",
+        "limitation": "Effectiveness depends strongly on matching the tactile representation (RGB vs. Force Field) to the specific task requirements.",
         "from_body": true
       },
       "authors": "Zhiyuan Zhang et al.",
@@ -86,9 +86,9 @@
       "image": "https://arxiv.org/html/2607.01067v1/x1.png",
       "tier": "match",
       "card": {
-        "one_liner": "TTP enables dexterous robotic manipulation by pre-training VLA models on large-scale human tactile-action data.",
-        "key_idea": "Uses a unified tactile/action space and a dual-expert system (action and tactile prediction) to transfer contact dynamics from human demonstrations to robots.",
-        "evaluation": "Evaluated via simulation (LIBERO, RoboCasa) and real-robot tasks (e.g., peeling, fragile picking) across diverse embodiments; results show superior fine-grained control.",
+        "one_liner": "TTP enables robotic dexterous manipulation by pre-training VLA models on large-scale human tactile-action data.",
+        "key_idea": "A dual-expert VLA system using unified action/tactile spaces and a tactile prediction expert to transfer human contact dynamics to robots via a manifold-preserving gating mechanism.",
+        "evaluation": "Evaluated on LIBERO, RoboCasa simulations and 9 real-robot tasks (e.g., peeling, chip picking) across various arms and hands; showed superior fine-grained manipulation.",
         "limitation": "Not clearly stated.",
         "from_body": true
       },
@@ -101,39 +101,16 @@
       "kind": "paper",
       "project": "CHARM",
       "category": "cs.RO",
-      "relevance": 0.8,
-      "title": "Seeing Touch from Motion: A Unified Modality-Aware Visuo-Tactile Policy with Tactile Motion Correlation",
-      "tldr": "NEW VISUO-TACTILE POLICY FOR CONTACT-RICH MANIPULATION",
-      "highlight": "This work introduces a motion-aware tactile representation that correlates transient and cumulative motion to distinguish fine-grained contact states, integrated via a Mixture-of-Transformers architecture for effective visuo-tactile fusion.",
-      "funding": "",
-      "image": "",
-      "tier": "match",
-      "card": {
-        "one_liner": "A visuo-tactile policy using motion correlation and Mixture-of-Transformers for fine-grained contact-rich manipulation.",
-        "key_idea": "Combines transient and cumulative tactile motion correlations for better state representation, fused via a Mixture-of-Transformers architecture to balance cross-modal interaction and modality-specific properties.",
-        "evaluation": "Not clearly stated.",
-        "limitation": "Not clearly stated.",
-        "from_body": false
-      },
-      "authors": "Shengqi Xu et al.",
-      "ref": "arXiv:2606.29941v1",
-      "date": "2026-06-29",
-      "url": "https://arxiv.org/abs/2606.29941v1"
-    },
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
       "relevance": 0.6,
       "title": "RoboTacDex: A Dexterous Visual-Tactile-Action Dataset for Humanoid Manipulation",
       "tldr": "DEXTEROUS HUMANOID MANIPULATION DATASET",
-      "highlight": "This dataset provides multi-modal trajectories including tactile feedback and visual data for humanoid manipulation, supporting the development of embodied social robots and HRI within RwB.",
+      "highlight": "This dataset provides multi-modal trajectories of dexterous humanoid manipulation, supporting RwB's focus on embodied AI and human-robot interaction.",
       "funding": "",
       "image": "",
       "tier": "match",
       "card": {
         "one_liner": "RoboTacDex is a large-scale multi-modal dataset for humanoid dexterous manipulation using the Unitree G1 robot.",
-        "key_idea": "6k trajectories across 19 tasks and 22 objects, integrating multi-view RGB-D, tactile feedback, and semantic annotations via a millisecond-synchronized recording system.",
+        "key_idea": "6k trajectories across 19 tasks and 22 objects, featuring multi-view RGB-D, tactile feedback, and semantic annotations for dual-arm dexterous manipulation.",
         "evaluation": "Three imitation learning models were tested; results showed successful trials and moderate generalization across various task categories.",
         "limitation": "Not clearly stated.",
         "from_body": false
@@ -149,16 +126,16 @@
       "category": "cs.RO",
       "relevance": 0.4,
       "title": "Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies",
-      "tldr": "INFERENCE-TIME GUIDANCE FOR FLOW-MATCHING VLA POLICIES",
-      "highlight": "This framework uses a learned action-chunk critic to guide the reverse-time flow sampler of a frozen SmolVLA policy, improving success rates on LIBERO manipulation tasks without retraining.",
+      "tldr": "INFERENCE-TIME GUIDANCE FOR VLA POLICIES",
+      "highlight": "This framework uses a learned action-chunk critic to guide the reverse-time flow sampler of a frozen SmolVLA policy, improving success rates on LIBERO manipulation tasks without retraining the base model.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.02092v1/Overview.png",
       "tier": "related",
       "card": {
         "one_liner": "Guided Action Flow improves frozen flow-matching VLA policies using an inference-time critic to guide action generation.",
-        "key_idea": "A learned action-chunk critic provides value gradients during the reverse-time flow sampling of a frozen SmolVLA policy, using an ensemble disagreement gate to mitigate uncertainty.",
-        "evaluation": "Evaluated on LIBERO tasks. Single-task success rose from 68% to 82%; multi-family validation improved from 46% to 56%. Results show feasibility but limited held-out generalization.",
-        "limitation": "Critic generalization is the central bottleneck; the method is sensitive to hyperparameters and produces modest gains on locked held-out tests.",
+        "key_idea": "A learned action-chunk critic provides value gradients during the reverse-time flow sampling of a frozen SmolVLA policy, using an ensemble disagreement gate to manage uncertainty.",
+        "evaluation": "Evaluated on LIBERO tasks; single-task success rose from 68% to 82%. Multi-family validation improved by 10pp, though held-out gains were modest (+2.5pp).",
+        "limitation": "Critic generalization is a bottleneck; performance is sensitive to hyperparameters and the critic can produce harmful gradients on unseen tasks.",
         "from_body": true
       },
       "authors": "Liuhaichen Yang et al.",
@@ -171,23 +148,46 @@
       "project": "CHARM",
       "category": "cs.RO",
       "relevance": 0.4,
-      "title": "Labimus: A Simulation and Benchmark for Humanoid Dexterous Manipulation in Chemical Laboratory",
-      "tldr": "HUMANOID DEXTEROUS MANIPULATION BENCHMARK FOR CHEMISTRY LABS",
-      "highlight": "This work introduces Labimus, a benchmark for humanoid dexterous manipulation in organic chemistry labs, which is relevant to RwB's focus on embodied social robots and human-robot interaction.",
+      "title": "From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation",
+      "tldr": "GRASP PRETRAINING FOR DEXTEROUS TOOL USE",
+      "highlight": "This research demonstrates that large-scale grasp datasets can be used to pretrain low-level controllers for contact-rich dexterous manipulation and articulated tool use. The approach outperforms end-to-end diffusion policies in both simulation and real-world tasks.",
       "funding": "",
-      "image": "https://arxiv.org/html/2606.31037v2/figures/fig_0.png",
+      "image": "https://arxiv.org/html/2606.30749v1/figs/teaser_v2.png",
       "tier": "related",
       "card": {
-        "one_liner": "Labimus is the first humanoid dexterous manipulation benchmark for precision-critical organic chemistry laboratory tasks.",
-        "key_idea": "A real-to-sim benchmark featuring 30+ functional assets, particle-based powder physics, and a three-tier evaluation hierarchy measuring task completion, quantitative precision, and long-horizon execution.",
-        "evaluation": "Three policies (ACT, Diffusion Policy, π0) were tested across six atomic operations and a seven-step workflow under four environmental perturbation conditions.",
-        "limitation": "Policies that successfully complete tasks often fail to meet the strict quantitative tolerances required for experimental validity.",
+        "one_liner": "Large-scale grasp datasets can pretrain low-level controllers for complex, articulated dexterous tool-use tasks.",
+        "key_idea": "A hierarchical imitation learning framework combining high-level 16-keypoint sub-goal prediction with a low-level controller pretrained on G2D-Pretrain (355k trajectories augmented from Dexonomy).",
+        "evaluation": "Evaluated on DexCraft (6 simulation tasks) and 3 real-world tasks; outperformed DP3 and HP-Scratch, improving real-world success by 33.3 percentage points.",
+        "limitation": "Relies on manually labeled sub-goals for the hierarchical framework and uses single object instances per task.",
         "from_body": true
       },
-      "authors": "Yuhan Wu et al.",
-      "ref": "arXiv:2606.31037v2",
-      "date": "2026-06-30",
-      "url": "https://arxiv.org/abs/2606.31037v2"
+      "authors": "Ying Yuan et al.",
+      "ref": "arXiv:2606.30749v1",
+      "date": "2026-06-29",
+      "url": "https://arxiv.org/abs/2606.30749v1"
+    },
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 0.3,
+      "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+      "tldr": "PORTABLE C++ INFERENCE RUNTIME FOR EMBODIED AI",
+      "highlight": "Embodied.cpp provides a portable C++ runtime for VLA and WAM models, enabling efficient closed-loop execution and multi-rate inference on heterogeneous robots. This supports RwB's focus on embodied social robots and AI-mediated interaction by streamlining model deployment on edge devices.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.02501v1/x1.png",
+      "tier": "related",
+      "card": {
+        "one_liner": "Embodied.cpp is a portable C++ inference runtime for deploying VLA and WAM models on heterogeneous robots.",
+        "key_idea": "A five-layer architecture (input adapters, sequence builders, backbone execution, head plugins, deployment adapters) supporting multi-rate execution and latency-first batch-1 inference across diverse edge hardware.",
+        "evaluation": "Tested on HY-VLA (100% success) and pi0.5 (91% success) VLA models, plus a LingBot-VA WAM block reducing memory from 312.2 to 88.1 MiB.",
+        "limitation": "Full closed-loop WAM results are not yet available due to instability on constrained local edge devices.",
+        "from_body": true
+      },
+      "authors": "Ling Xu et al.",
+      "ref": "arXiv:2607.02501v1",
+      "date": "2026-07-02",
+      "url": "https://arxiv.org/abs/2607.02501v1"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "CHARM · pHRI · TACTILE · EXPRESSIVE",
-    "generated": "2026-07-21"
+    "generated": "2026-07-22"
   },
   "slides": [
     {
@@ -11,14 +11,14 @@
       "category": "cs.RO",
       "relevance": 0.9,
       "title": "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
-      "tldr": "FORCE-BASED MEMORY FOR CONTACT-RICH MANIPULATION",
-      "highlight": "FM-VLA introduces a force-based memory system using a VAE to encode force histories, allowing VLAs to reason about temporal context in visually ambiguous, contact-rich tasks.",
+      "tldr": "FORCE-BASED MEMORY FOR CONTACT-RICH ROBOTIC MANIPULATION",
+      "highlight": "FM-VLA introduces force-based memory tokens using a pretrained VAE to help vision-language-action models reason about temporal context in contact-rich tasks. This approach outperforms vision-only memory in visually ambiguous scenarios with minimal inference overhead.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.18231v1/x1.png",
       "tier": "match",
       "card": {
         "one_liner": "FM-VLA uses force-based memory to enable temporal reasoning for non-Markovian, contact-rich robotic manipulation tasks.",
-        "key_idea": "A pretrained VAE compresses long-horizon wrench histories into compact memory tokens, combined with short-term proprioceptive state tokens, to condition a flow-matching action expert.",
+        "key_idea": "A pretrained VAE compresses long-horizon wrench histories into compact memory tokens, combined with short-term state history to condition a flow-matching VLA action expert.",
         "evaluation": "Evaluated on three bimanual tasks (finding blocks, pressing buttons, wiping dishes); achieved 83.3% average success rate, significantly outperforming memoryless and vision-memory baselines.",
         "limitation": "The fixed 8-token VAE bottleneck may be insufficient for very long-horizon tasks requiring memory of hundreds of contact events.",
         "from_body": true
@@ -35,15 +35,15 @@
       "relevance": 0.9,
       "title": "Towards Artificial Nerves: Biomimetic Optical-Fiber Tactile Sensing for Robots",
       "tldr": "BIOMIMETIC OPTICAL-FIBER TACTILE SENSING",
-      "highlight": "OptiTac emulates human mechanoreceptor architecture using optical fibers to provide high-resolution, interpretable tactile sensing for robotic manipulation.",
+      "highlight": "OptiTac emulates human mechanoreceptor architecture using optical fibers to enable high-resolution, interpretable tactile sensing for dexterous robotic manipulation.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.15746v1/background.png",
       "tier": "match",
       "card": {
-        "one_liner": "OptiTac is a biomimetic tactile sensor using optical fibers to enable interpretable, high-resolution robotic touch.",
-        "key_idea": "Pairs each mechanical pin on soft skin with one optical fiber, routing signals to a remote camera for analytical processing via image moments.",
+        "one_liner": "OptiTac is a biomimetic tactile sensor using optical fibers to route tactile data away from the skin.",
+        "key_idea": "Pairs each mechanical pin with one optical fiber, treating resulting light intensity patterns as images for analytical inference via image moments.",
         "evaluation": "Tested with various indenters; achieved sub-millimeter localization (RMSE ~0.4mm), linear contact-width estimation, and 96% shape classification accuracy using GMMs.",
-        "limitation": "Performance was validated under controlled laboratory conditions with short fibers; robustness to long-distance routing and environmental variation remains unquantified.",
+        "limitation": "Performance was tested under controlled laboratory conditions with short fibers; robustness to long routing and repeated bending remains unquantified.",
         "from_body": true
       },
       "authors": "Laura E. Butcher et al.",
@@ -57,15 +57,15 @@
       "category": "cs.RO",
       "relevance": 0.9,
       "title": "Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation",
-      "tldr": "TACTILE GROUNDING FOR CONTACT-RICH MANIPULATION",
-      "highlight": "This work introduces a Latent Tactile Predictor that aligns intermediate action representations with future contact consequences to improve VLA policies in contact-rich tasks.",
+      "tldr": "TACTILE GROUNDING VIA LATENT PREDICTION",
+      "highlight": "This research introduces a Latent Tactile Predictor (LTP) that aligns intermediate action representations with future contact consequences to improve contact-rich manipulation.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.14609v1/x1.png",
       "tier": "match",
       "card": {
-        "one_liner": "Improves contact-rich robotic manipulation by grounding VLA policies using future tactile prediction at intermediate representations.",
-        "key_idea": "Uses linear probes to identify intermediate action-expert features as the optimal interface for a Latent Tactile Predictor (LTP) that predicts compact future tactile embeddings.",
-        "evaluation": "Tested on five real-world tasks using SmolVLA and π0 backbones; achieved 74% and 73% average success, outperforming VLM-side and final-state grounding.",
+        "one_liner": "Improves contact-rich robotic manipulation by grounding VLA policies using future tactile prediction at specific intermediate representations.",
+        "key_idea": "Uses linear probes to identify intermediate action-expert features as the optimal interface for a Latent Tactile Predictor (LTP) to supervise contact dynamics.",
+        "evaluation": "Tested on five real-world tasks using SmolVLA and π0 backbones; achieved 74% and 73% average success rates, respectively.",
         "limitation": "Not clearly stated.",
         "from_body": true
       },
@@ -78,70 +78,24 @@
       "kind": "paper",
       "project": "CHARM",
       "category": "cs.RO",
-      "relevance": 0.9,
-      "title": "Never Too Late for Force: Accelerating VLA Post-Training with Reactive Force Injection",
-      "tldr": "FORCE-AWARE VLA POST-TRAINING",
-      "highlight": "LIFT introduces a force-aware post-training framework that injects 6D end-effector force into VLA policies, enhancing contact-rich manipulation. This aligns with MOSAIC's focus on physics/force-based skill acquisition and human-AI coadaptation.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2607.14236v1/x1.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "LIFT adds reactive force sensing to pretrained VLAs to improve contact-rich manipulation via online post-training.",
-        "key_idea": "Grafts a reactive action expert with causal force memory and zero-initialized cross-attention, coupled with an online DAgger loop to mitigate force distribution shift.",
-        "evaluation": "Evaluated on towel folding, book insertion, and Hanoi ring placement; LIFT outperformed vision-only DAgger and single-frame force baselines in success rates.",
-        "limitation": "Depends on human corrections during online DAgger, limiting data throughput; evaluated only on single-arm manipulation.",
-        "from_body": true
-      },
-      "authors": "Yi Wang et al.",
-      "ref": "arXiv:2607.14236v1",
-      "date": "2026-07-15",
-      "url": "https://arxiv.org/abs/2607.14236v1"
-    },
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
       "relevance": 0.8,
-      "title": "Catch, Throw, Repeat: Planning for Human-Robot Partner Juggling",
-      "tldr": "REAL-TIME PLANNING FOR HUMAN-ROBOT JUGGLING",
-      "highlight": "This work presents a planning and control architecture for synchronized multi-ball juggling, advancing physical human-robot interaction relevant to RwB.",
+      "title": "MVP-Tac: A Miniaturized Dual-Modal Vision and Photoelastic Tactile Sensor for Robot-Assisted Minimally Invasive Surgery",
+      "tldr": "DUAL-MODAL VISION AND TACTILE SENSOR FOR MINIMALLY INVASIVE SURGERY",
+      "highlight": "MVP-Tac integrates reflective photoelastic imaging to provide co-located vision and tactile sensing, enabling tumor palpation and hardness classification without sacrificing visual feedback.",
       "funding": "",
-      "image": "https://arxiv.org/html/2607.15129v1/x1.png",
+      "image": "https://arxiv.org/html/2607.18660v1/figures/sensor_views_all_origin_new.png",
       "tier": "match",
       "card": {
-        "one_liner": "A real-time planning system enabling a robot to perform synchronized multi-ball partner juggling with humans.",
-        "key_idea": "Integrates predictive ball tracking, adaptive online trajectory optimization via multiple-shooting, and state-machine-based coordination logic to manage catch-and-throw decisions in real-time.",
-        "evaluation": "User study with 8 participants (beginner to expert); achieved 3-ball cascades and 100% success in single-ball trials; results exceed previous records.",
-        "limitation": "Performance is constrained by timing pressure at high ball counts and lack of explicit inter-ball collision avoidance.",
+        "one_liner": "MVP-Tac is a miniaturized dual-modal sensor providing co-located vision and photoelastic tactile sensing for RMIS.",
+        "key_idea": "Uses a reflective circular polariscope and a semi-transparent membrane to switch between visual navigation and stress-dependent photoelastic imaging for force estimation and hardness classification.",
+        "evaluation": "Validated via force calibration (0-2N), tissue phantoms (97% exposed/92% subdermal tumor classification accuracy), and a simulated colonoscopy with 3D luminal mapping.",
+        "limitation": "VytaFlex elastomer causes slow recovery, hysteresis (9.46%), and reduced sensitivity near the 2N compression limit.",
         "from_body": true
       },
-      "authors": "Jonathan Rainer Lippert et al.",
-      "ref": "arXiv:2607.15129v1",
-      "date": "2026-07-16",
-      "url": "https://arxiv.org/abs/2607.15129v1"
-    },
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
-      "relevance": 0.8,
-      "title": "VTAP Gripper: Synergizing Fingertip Sensing and a Visuo-Tactile Active Palm for Dexterous In-Hand Manipulation",
-      "tldr": "TACTILE-REACTIVE GRIPPER FOR DEXTEROUS MANIPULATION",
-      "highlight": "This research introduces a gripper combining a visuo-tactile active palm with tactile array sensors to achieve robust grasping and fine manipulation without high-DOF anthropomorphic designs.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2607.15448v1/x1.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "A tactile-reactive gripper using an active bi-modal palm for dexterous in-hand manipulation and teleoperation.",
-        "key_idea": "Integrates a 13-DOF structure with fingertip tactile arrays and an actuated palm that switches between visual localization and tactile feedback via controllable internal illumination.",
-        "evaluation": "Tested on YCB objects, syringe reorientation (65% success), object singulation (down to 3mm), and peg-in-hole insertion (70% success) using VR teleoperation.",
-        "limitation": "VR hand-tracking occlusions can cause unintentional grasp release during complex motions, such as depressing a plunger.",
-        "from_body": true
-      },
-      "authors": "Yuhao Zhou et al.",
-      "ref": "arXiv:2607.15448v1",
-      "date": "2026-07-16",
-      "url": "https://arxiv.org/abs/2607.15448v1"
+      "authors": "Md Rakibul Islam Prince et al.",
+      "ref": "arXiv:2607.18660v1",
+      "date": "2026-07-21",
+      "url": "https://arxiv.org/abs/2607.18660v1"
     },
     {
       "kind": "paper",
@@ -150,21 +104,44 @@
       "relevance": 0.8,
       "title": "MIDAS Hand: Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand",
       "tldr": "LOW-COST OPEN-SOURCE TACTILE DEXTEROUS HAND",
-      "highlight": "The MIDAS Hand provides a low-impedance, anthropomorphic platform with integrated tactile sensing, supporting human-to-robot data collection relevant to MOSAIC's focus on human proficiency and skill acquisition.",
+      "highlight": "The MIDAS Hand provides a human-scale platform with integrated tactile sensing and low backdrive torque, supporting the human-to-robot data collection and physics-based sensing required for MOSAIC.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.14487v1/x1.png",
       "tier": "match",
       "card": {
-        "one_liner": "A low-cost, open-source, human-scale dexterous hand featuring direct-drive actuation and dense tactile sensing.",
-        "key_idea": "Combines 13 active DoFs, 3D-printed modular construction, and 283 three-axis tactile taxels with low-friction, directly-driven actuation for compliant, anthropomorphic manipulation.",
-        "evaluation": "Validated via GRASP taxonomy (32/33 types), backdrivability tests (≈0.02 Nm), payload tests (>9.5kg), and 5,000+ cycle reliability tests. Results appear robust.",
-        "limitation": "Lacks a little finger, limiting certain ulnar-side grasps; tactile sensing is not yet integrated into closed-loop control.",
+        "one_liner": "A low-cost, open-source, human-scale dexterous hand featuring directly-driven actuation and integrated multi-axis tactile sensing.",
+        "key_idea": "Combines 13 active DoFs, 3D-printed modular construction, and 283 tactile taxels with low-friction rigid linkages to achieve high backdrivability and human-like thumb opposition.",
+        "evaluation": "Validated via GRASP taxonomy (32/33 types), backdrive torque measurements (~0.02 Nm), payload tests (>9.5 kg), and 5,000+ cycle reliability tests.",
+        "limitation": "Lacks a little finger, limiting some ulnar-side grasps, and tactile sensing is not yet integrated into closed-loop control.",
         "from_body": true
       },
       "authors": "Alvin Zhu et al.",
       "ref": "arXiv:2607.14487v1",
       "date": "2026-07-16",
       "url": "https://arxiv.org/abs/2607.14487v1"
+    },
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 0.7,
+      "title": "Catch, Throw, Repeat: Planning for Human-Robot Partner Juggling",
+      "tldr": "REAL-TIME PLANNING FOR HUMAN-ROBOT JUGGLING",
+      "highlight": "This work presents a planning and control architecture for synchronized multi-ball juggling between humans and robots, contributing to the study of physical human-robot interaction relevant to RwB.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.15129v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "A real-time planning system enabling a robot to perform synchronized multi-ball partner juggling with humans.",
+        "key_idea": "Integrates predictive ball tracking, state-machine coordination logic, and adaptive online trajectory optimization using a multiple-shooting formulation to catch and throw balls dynamically.",
+        "evaluation": "User study with 8 participants (beginner to expert); achieved 3-ball cascades and 100% success in single-ball trials. Results exceed previous records.",
+        "limitation": "Performance is constrained by timing pressure at high ball counts and lack of explicit spatial coordination to avoid inter-ball collisions.",
+        "from_body": true
+      },
+      "authors": "Jonathan Rainer Lippert et al.",
+      "ref": "arXiv:2607.15129v1",
+      "date": "2026-07-16",
+      "url": "https://arxiv.org/abs/2607.15129v1"
     },
     {
       "kind": "paper",
@@ -178,16 +155,39 @@
       "image": "https://arxiv.org/html/2607.16123v1/assets/title_figure.png",
       "tier": "match",
       "card": {
-        "one_liner": "BayesContact uses simulation-based inference to fuse visual and tactile data for precise peg-in-hole pose estimation.",
-        "key_idea": "A Sequential Monte Carlo framework that updates a particle belief using rendering-based depth likelihoods and physics-based contact likelihoods derived from force/torque measurements and guarded probing.",
-        "evaluation": "Evaluated via simulation and real-robot experiments across five geometries; improved pose observability and insertion success by 30% over vision-only inference.",
-        "limitation": "Likelihood evaluations during the contact phase require physics simulations, preventing the use of Metropolis-Hastings rejuvenation for particle refinement.",
+        "one_liner": "BayesContact uses simulation-based inference to fuse visuo-tactile data for precise object pose estimation during insertion.",
+        "key_idea": "A Sequential Monte Carlo framework using a graphics renderer for depth likelihoods and a physics simulator for contact likelihoods to maintain a multimodal pose belief.",
+        "evaluation": "Evaluated on five peg-in-hole geometries via simulation and real-robot experiments; improved pose observability and insertion success by 30% over vision-only methods.",
+        "limitation": "Contact-phase updates omit Metropolis-Hastings rejuvenation because each likelihood evaluation requires computationally expensive physics simulations.",
         "from_body": true
       },
       "authors": "Aditya Kamireddypalli et al.",
       "ref": "arXiv:2607.16123v1",
       "date": "2026-07-17",
       "url": "https://arxiv.org/abs/2607.16123v1"
+    },
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 0.7,
+      "title": "VTAP Gripper: Synergizing Fingertip Sensing and a Visuo-Tactile Active Palm for Dexterous In-Hand Manipulation",
+      "tldr": "TACTILE-REACTIVE GRIPPER FOR DEXTEROUS MANIPULATION",
+      "highlight": "This work introduces a gripper combining a visuo-tactile active palm with tactile array sensors to achieve robust grasping and fine manipulation. It utilizes a gesture-conditioned retargeting framework for teleoperation, demonstrating success in tasks like syringe reorientation and small object singulation.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.15448v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "A 13-DOF gripper combining an active bi-modal palm and tactile fingertips for dexterous in-hand manipulation.",
+        "key_idea": "Integrates a visuo-tactile active palm with compliant fingers and a gesture-conditioned retargeting framework to bridge the embodiment gap between human hands and the three-finger structure.",
+        "evaluation": "Tested on YCB objects, syringe reorientation (65% success), object singulation (down to 3mm), and peg-in-hole insertion (70% success) using a UR5e arm.",
+        "limitation": "VR hand-tracking occlusions can cause unintentional grasp release during complex teleoperated motions.",
+        "from_body": true
+      },
+      "authors": "Yuhao Zhou et al.",
+      "ref": "arXiv:2607.15448v1",
+      "date": "2026-07-16",
+      "url": "https://arxiv.org/abs/2607.15448v1"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-07-27"
+    "generated": "2026-07-28"
   },
   "slides": [
     {
@@ -28,8 +28,8 @@
       "category": "cs.CL",
       "relevance": 0.9,
       "title": "MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings",
-      "tldr": "BENCHMARK FOR THEORY-OF-MIND REASONING IN MULTI-PARTY MEETINGS",
-      "highlight": "This work introduces MeetingToM to evaluate multimodal models on subject-level mental states, addressee understanding, and group consensus, aligning with HyECHO's focus on addressee modeling and group norms.",
+      "tldr": "BENCHMARK FOR MULTIMODAL THEORY-OF-MIND REASONING IN MEETINGS",
+      "highlight": "This work introduces MeetingToM to evaluate MLLMs on subject-level mental states, addressee understanding, and group consensus, supporting HyECHO's focus on multimodal social perception and listener modeling.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.19235v1/x1.png",
       "tier": "match",
@@ -37,7 +37,7 @@
         "one_liner": "MeetingToM evaluates MLLMs' ability to reason about latent social states and pseudo-consensus in multi-party meetings.",
         "key_idea": "A hierarchical benchmark with three tasks: subject-level mental state prediction, dyadic-level addressee/attitude inference, and group-level consensus reasoning using video and transcripts.",
         "evaluation": "Tested proprietary (GPT-5, Gemini-3 Pro) and open-source (Qwen) MLLMs on 1,800 clips from AMI Corpus; humans significantly outperformed models.",
-        "limitation": "Limited to English-language, short video segments (5s-50s) rather than full meetings, and lacks direct participant self-reported mental states.",
+        "limitation": "Limited to English-language, short video segments (5s/50s) rather than full meetings, and lacks direct participant self-reported mental states.",
         "from_body": true
       },
       "authors": "Ziyi Wang et al.",
@@ -50,16 +50,39 @@
       "project": "RwB",
       "category": "cs.RO",
       "relevance": 0.9,
+      "title": "Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim",
+      "tldr": "EPISODIC MEMORY ENHANCES SOCIAL ROBOT RELATIONS",
+      "highlight": "This research demonstrates that integrating a personalized episodic memory module into a humanoid robot head increases perceived sociability, trustworthiness, and warmth. This is relevant to RwB's focus on embodied social robots and human-robot interaction.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.24190v1/images/DSC07466_cropped.jpg",
+      "tier": "match",
+      "card": {
+        "one_liner": "Episodic memory in a humanoid robot head increases perceived sociability without increasing user disturbance.",
+        "key_idea": "A lightweight module using vector-based semantic retrieval and a hybrid scoring function (combining cosine similarity, recency, access frequency, and emotional intensity) to inject past interactions into LLM prompts.",
+        "evaluation": "Within-subjects video-based study (N=43) using the HRIES scale. Results showed significant gains in trustworthiness (d=0.62) and warmth (d=0.56), with no increase in disturbance (d=0.00).",
+        "limitation": "Video-based format lacked real-time interaction; small student sample; did not compare the hybrid architecture against simpler retrieval methods.",
+        "from_body": true
+      },
+      "authors": "Steve Aschenbrenner et al.",
+      "ref": "arXiv:2607.24190v1",
+      "date": "2026-07-27",
+      "url": "https://arxiv.org/abs/2607.24190v1"
+    },
+    {
+      "kind": "paper",
+      "project": "RwB",
+      "category": "cs.RO",
+      "relevance": 0.9,
       "title": "Teachy Mini: Development and Preliminary Evaluation of a Knowledge-Based Generative Social Robot for Higher Education",
       "tldr": "KNOWLEDGE-BASED GENERATIVE SOCIAL ROBOT FOR TUTORING",
-      "highlight": "This work develops Teachy Mini, a generative social robot using knowledge-based design to ensure responsible tutoring behavior. It is relevant to RwB's focus on embodied social robots and AI-mediated embodied learning.",
+      "highlight": "This research demonstrates how knowledge-based design and retrieval-augmented generation can create responsible tutoring behaviors in social robots, contributing to the RwB goal of AI-mediated embodied learning.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.22345v1/Figure1.png",
       "tier": "match",
       "card": {
-        "one_liner": "Teachy Mini is a generative social robot using knowledge-based design to provide responsible, personalized higher education tutoring.",
-        "key_idea": "Operationalizes knowledge-based design via system prompting, retrieval-augmented generation (RAG), and stateful prompt orchestration to integrate self, user, and context-knowledge into the Reachy Mini platform.",
-        "evaluation": "Between-subjects study (N=24) comparing KBD vs. control. Teachy Mini was perceived as significantly more responsible, though no significant differences in acceptance or motivation were found.",
+        "one_liner": "Teachy Mini is a knowledge-based generative social robot designed for responsible tutoring in higher education.",
+        "key_idea": "Operationalizes Knowledge-Based Design (KBD) using system prompting, retrieval-augmented generation (RAG), and stateful prompt orchestration to provide personalized, grounded, and pedagogically sound tutoring.",
+        "evaluation": "A between-subjects study (N=24) comparing Teachy Mini to a non-KBD control. Teachy Mini was perceived as significantly more responsible, though learning gains were not significantly different.",
         "limitation": "Preliminary evaluation with a small sample size (N=24) and a single-session interaction context.",
         "from_body": true
       },
@@ -92,29 +115,6 @@
       "url": "https://arxiv.org/abs/2607.21802v1"
     },
     {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.CL",
-      "relevance": 0.8,
-      "title": "Modeling turn-taking with distant viewing: investigating silence thresholds in human and AI-generated discourse",
-      "tldr": "ANALYSIS OF SILENCE GAPS IN HUMAN AND AI DISCOURSE",
-      "highlight": "This study examines silence thresholds and turn-taking in human and AI-generated audiovisual material, contributing to the understanding of engagement and diarization for HyECHO.",
-      "funding": "",
-      "image": "",
-      "tier": "match",
-      "card": {
-        "one_liner": "Study compares silence thresholds in human sitcoms versus AI-generated podcasts to analyze turn-taking patterns.",
-        "key_idea": "Analysis of silence gaps across speaker gender and production settings using fundamental-frequency thresholds estimated via Praat.",
-        "evaluation": "Analyzed 30 US situational comedies and 51 Google NotebookLM synthetic podcasts; metrics focused on silence gap durations.",
-        "limitation": "Not clearly stated.",
-        "from_body": false
-      },
-      "authors": "Taylor Arnold et al.",
-      "ref": "arXiv:2607.18076v1",
-      "date": "2026-07-20",
-      "url": "https://arxiv.org/abs/2607.18076v1"
-    },
-    {
       "kind": "funding",
       "project": "RwB",
       "category": "Tech Times",
@@ -133,20 +133,43 @@
     },
     {
       "kind": "paper",
+      "project": "HyECHO",
+      "category": "cs.AI",
+      "relevance": 0.8,
+      "title": "Do Visual Features Improve Other-Initiated Repair Detection? A Dyadic Multimodal Approach",
+      "tldr": "MULTIMODAL OTHER-INITIATED REPAIR DETECTION",
+      "highlight": "This work demonstrates that incorporating visual features like gaze and gestures improves the detection of other-initiated repairs, supporting HyECHO's focus on multimodal social perception and listener modeling.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.23845v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "Visual features improve the detection and classification of other-initiated repairs in multimodal conversational dialogue.",
+        "key_idea": "A hierarchical multimodal model integrating text, audio, and CA-grounded visual features (gaze, facial expressions, posture, gestures) extracted via OpenFace and MediaPipe Holistic.",
+        "evaluation": "Evaluated on NOXI (French) and CABB-S (Dutch) corpora using macro-F1; TriModal outperformed text+audio baselines and zero-shot Qwen2.5-Omni-7B.",
+        "limitation": "High class imbalance in corpora leads to high variance in classification results, particularly for rare repair types in NOXI.",
+        "from_body": true
+      },
+      "authors": "Anh Ngo et al.",
+      "ref": "arXiv:2607.23845v1",
+      "date": "2026-07-26",
+      "url": "https://arxiv.org/abs/2607.23845v1"
+    },
+    {
+      "kind": "paper",
       "project": "RwB",
       "category": "cs.RO",
-      "relevance": 0.7,
+      "relevance": 0.8,
       "title": "ACME: A Multi-Cultural, Multi-Embodiment Social-Navigation Dataset",
       "tldr": "CROSS-CULTURAL SOCIAL NAVIGATION DATASET",
-      "highlight": "This dataset captures diverse human-robot interactions across different cultures and robot embodiments, which is relevant to RwB's focus on embodied social robots.",
+      "highlight": "This dataset captures goal-driven social navigation and human-robot interactions across diverse cultures and embodiments, supporting the RwB goal of improving embodied social robots.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.21964v1/x1.png",
       "tier": "match",
       "card": {
-        "one_liner": "ACME is a large-scale, multi-modal social navigation dataset featuring diverse cultures and robot embodiments.",
-        "key_idea": "Data collected across 5 countries using 7 robot types, providing onboard sensor data, robot speech interactions, and human-verified metric pedestrian trajectories from overhead cameras.",
-        "evaluation": "Compared against prior datasets via qualitative/quantitative analysis of scenario complexity and pedestrian behavior; benchmarked SOTA vision navigation and trajectory prediction models.",
-        "limitation": "Varying IRB privacy requirements led to different anonymization levels (e.g., full body segmentation), causing information loss for off-the-shelf vision models.",
+        "one_liner": "ACME is a large-scale, multi-cultural, multi-embodiment dataset for social robot navigation and pedestrian trajectory prediction.",
+        "key_idea": "Data collected across 5 countries using 7 robot embodiments, featuring 29.35 hours of onboard data and 43.5 hours of overhead pedestrian tracking with human-verified labels.",
+        "evaluation": "Evaluated via qualitative and quantitative analysis against prior datasets; benchmarked state-of-the-art vision navigation and pedestrian trajectory prediction models.",
+        "limitation": "Varying IRB privacy requirements led to different anonymization levels (e.g., full body segmentation), potentially hindering off-the-shelf vision model usage.",
         "from_body": true
       },
       "authors": "Shashank Rao Marpally et al.",
@@ -156,32 +179,9 @@
     },
     {
       "kind": "paper",
-      "project": "RwB",
-      "category": "cs.RO",
-      "relevance": 0.7,
-      "title": "Imitation of Arm Gestures by the Semi-Humanoid Robot NICO",
-      "tldr": "HUMAN ARM GESTURE IMITATION VIA MONOCULAR RGB INPUT",
-      "highlight": "This research develops a system for a semi-humanoid robot to imitate human arm gestures using MediaPipe pose-estimation, contributing to the development of embodied social robots for RwB.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2607.18197v1/images/nico_dofs_numbered.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "A system for the NICO robot to imitate human arm gestures using monocular RGB input.",
-        "key_idea": "Combines MediaPipe pose and hand landmark extraction with analytical geometry to compute joint angles, which are then linearly mapped to NICO's specific motor configurations.",
-        "evaluation": "Tested with six participants performing 11 poses across three viewing angles. Results show moderate accuracy for most joints, with MAEs between 10° and 34°.",
-        "limitation": "High reconstruction error for forearm rotation (50.1° MAE) and sensitivity to self-occlusion and complex poses.",
-        "from_body": true
-      },
-      "authors": "Anastasiya Ihnatovich et al.",
-      "ref": "arXiv:2607.18197v1",
-      "date": "2026-07-20",
-      "url": "https://arxiv.org/abs/2607.18197v1"
-    },
-    {
-      "kind": "paper",
       "project": "MIMIC",
       "category": "cs.LG",
-      "relevance": 0.6,
+      "relevance": 0.7,
       "title": "Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness",
       "tldr": "CAUSAL IMPACT BOUNDS FOR ML-ASSISTED DECISIONS",
       "highlight": "This work proposes a partial-identification approach to bound the causal effect of new ML models using prior RCT data and counterfactual correctness. It is relevant to MIMIC's focus on societal-scale simulation and impact analysis of human-AI societies.",
@@ -189,10 +189,10 @@
       "image": "https://arxiv.org/html/2607.21806v1/3_threshold_gt3/3_age_group_bounds.png",
       "tier": "match",
       "card": {
-        "one_liner": "Constructs causal impact bounds for new ML models using prior RCT data and counterfactual correctness assumptions.",
-        "key_idea": "A partial-identification framework using monotonicity assumptions on individual-level 'counterfactual correctness' and subgroup predictive performance to bound downstream outcomes of untrialed models.",
+        "one_liner": "Constructs causal impact bounds for new ML models using prior RCT data and counterfactual correctness.",
+        "key_idea": "A partial-identification approach using monotonicity assumptions on individual-level 'counterfactual correctness' and subgroup predictive performance to bound downstream outcomes of untrialed models.",
         "evaluation": "Evaluated via a semi-synthetic simulation study; results showed more informative bounds compared to prior work.",
-        "limitation": "Requires observed 'true labels' for all RCT individuals and assumes predictions do not influence those true labels.",
+        "limitation": "Requires 'true labels' to be observed for all RCT individuals and assumes predictions do not influence true labels.",
         "from_body": true
       },
       "authors": "Jonathan Zhang et al.",

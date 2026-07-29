@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-07-28"
+    "generated": "2026-07-29"
   },
   "slides": [
     {
@@ -24,26 +24,72 @@
     },
     {
       "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.CL",
+      "project": "MIMIC",
+      "category": "cs.MA",
       "relevance": 0.9,
-      "title": "MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings",
-      "tldr": "BENCHMARK FOR MULTIMODAL THEORY-OF-MIND REASONING IN MEETINGS",
-      "highlight": "This work introduces MeetingToM to evaluate MLLMs on subject-level mental states, addressee understanding, and group consensus, supporting HyECHO's focus on multimodal social perception and listener modeling.",
+      "title": "CoRenew: A large language model agent-based policy simulation platform for multifamily residential redevelopment",
+      "tldr": "LLM-BASED POLICY SIMULATION FOR RESIDENTIAL REDEVELOPMENT",
+      "highlight": "CoRenew uses LLM-based agents to simulate stakeholder negotiations and evaluate policy effects, aligning with MIMIC's focus on societal-scale simulation and LLM-based agent models.",
       "funding": "",
-      "image": "https://arxiv.org/html/2607.19235v1/x1.png",
+      "image": "https://arxiv.org/html/2607.25447v1/figures/01_twolevel_framework.png",
       "tier": "match",
       "card": {
-        "one_liner": "MeetingToM evaluates MLLMs' ability to reason about latent social states and pseudo-consensus in multi-party meetings.",
-        "key_idea": "A hierarchical benchmark with three tasks: subject-level mental state prediction, dyadic-level addressee/attitude inference, and group-level consensus reasoning using video and transcripts.",
-        "evaluation": "Tested proprietary (GPT-5, Gemini-3 Pro) and open-source (Qwen) MLLMs on 1,800 clips from AMI Corpus; humans significantly outperformed models.",
-        "limitation": "Limited to English-language, short video segments (5s/50s) rather than full meetings, and lacks direct participant self-reported mental states.",
+        "one_liner": "CoRenew is an LLM-agent platform for simulating multi-round stakeholder negotiations in multifamily residential redevelopment policy evaluation.",
+        "key_idea": "It uses LLM-based resident agents structured by the Theory of Planned Behavior, synthetic population generation, and weighted representative selection to simulate adaptive responses to policy interventions.",
+        "evaluation": "Validated against 324 resident surveys (100% directional agreement on 19 paths) and a real-world nine-month negotiation case study.",
+        "limitation": "Not clearly stated.",
         "from_body": true
       },
-      "authors": "Ziyi Wang et al.",
-      "ref": "arXiv:2607.19235v1",
-      "date": "2026-07-21",
-      "url": "https://arxiv.org/abs/2607.19235v1"
+      "authors": "Yudi Zhang et al.",
+      "ref": "arXiv:2607.25447v1",
+      "date": "2026-07-28",
+      "url": "https://arxiv.org/abs/2607.25447v1"
+    },
+    {
+      "kind": "paper",
+      "project": "HyECHO",
+      "category": "cs.AI",
+      "relevance": 0.9,
+      "title": "Do Visual Features Improve Other-Initiated Repair Detection? A Dyadic Multimodal Approach",
+      "tldr": "MULTIMODAL OTHER-INITIATED REPAIR DETECTION",
+      "highlight": "This research demonstrates that incorporating visual features like gaze and gestures improves the detection of other-initiated repairs, supporting HyECHO's goals in multimodal social perception and listener modeling.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.23845v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "Visual features improve the detection and classification of other-initiated repairs in multimodal conversational dialogue.",
+        "key_idea": "A hierarchical multimodal model integrating text, audio, and CA-grounded visual features (gaze, facial expressions, posture, gestures) extracted via OpenFace and MediaPipe Holistic.",
+        "evaluation": "Evaluated on NOXI (French) and CABB-S (Dutch) corpora using macro-F1; TriModal outperformed text-audio baselines and zero-shot Qwen2.5-Omni-7B.",
+        "limitation": "High variance in NOXI results due to severe class imbalance and small sample sizes for specific repair types.",
+        "from_body": true
+      },
+      "authors": "Anh Ngo et al.",
+      "ref": "arXiv:2607.23845v1",
+      "date": "2026-07-26",
+      "url": "https://arxiv.org/abs/2607.23845v1"
+    },
+    {
+      "kind": "paper",
+      "project": "RwB",
+      "category": "cs.RO",
+      "relevance": 0.9,
+      "title": "Belief-Aware Influence and Trust (BAIT): Shaping Human Belief During Repeated Human-Robot Interaction",
+      "tldr": "OPTIMIZING HUMAN TRUST AND INFLUENCE IN REPEATED HRI",
+      "highlight": "The BAIT controller manages the trade-off between long-term influence and human trust in repeated interactions, supporting RwB's focus on human-robot interaction.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2607.25327v1/x1.png",
+      "tier": "match",
+      "card": {
+        "one_liner": "BAIT balances long-term influence and human trust to maintain task performance during repeated human-robot interactions.",
+        "key_idea": "A hierarchical particle filter infers short-term strategies and long-term beliefs, which a belief-aware MPPI planner uses to optimize the trade-off between unpredictability and transparency.",
+        "evaluation": "Evaluated via simulations, a human-subject study, and real-world GEM vehicle lane-merging; BAIT matched influence-only baselines' performance while significantly increasing user trust.",
+        "limitation": "The approach relies on a structured human model and specific latent state assumptions to maintain computational tractability.",
+        "from_body": true
+      },
+      "authors": "Ye-Ji Mun et al.",
+      "ref": "arXiv:2607.25327v1",
+      "date": "2026-07-28",
+      "url": "https://arxiv.org/abs/2607.25327v1"
     },
     {
       "kind": "paper",
@@ -52,15 +98,15 @@
       "relevance": 0.9,
       "title": "Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim",
       "tldr": "EPISODIC MEMORY ENHANCES SOCIAL ROBOT RELATIONS",
-      "highlight": "This research demonstrates that integrating a personalized episodic memory module into a humanoid robot head increases perceived sociability, trustworthiness, and warmth. This is relevant to RwB's focus on embodied social robots and human-robot interaction.",
+      "highlight": "This work demonstrates that a personalized episodic memory module for a humanoid robot head increases perceived sociability, trustworthiness, and warmth. It is relevant to RwB's focus on embodied social robots and human-robot interaction.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.24190v1/images/DSC07466_cropped.jpg",
       "tier": "match",
       "card": {
         "one_liner": "Episodic memory in a humanoid robot head increases perceived sociability without increasing user disturbance.",
         "key_idea": "A lightweight module using vector-based semantic retrieval and a hybrid scoring function (combining cosine similarity, recency, access frequency, and emotional intensity) to inject past interactions into LLM prompts.",
-        "evaluation": "Within-subjects video-based study (N=43) using the HRIES scale. Results showed significant gains in trustworthiness (d=0.62) and warmth (d=0.56), with no increase in disturbance (d=0.00).",
-        "limitation": "Video-based format lacked real-time interaction; small student sample; did not compare the hybrid architecture against simpler retrieval methods.",
+        "evaluation": "Within-subjects video-based study (N=43) using the HRIES scale. Results showed significant increases in trustworthiness (d=0.62) and warmth (d=0.56), with no change in disturbance (d=0.00).",
+        "limitation": "Video-based format lacked real-time interaction; the sample was limited to university students; the specific retrieval architecture's superiority over simpler methods was not tested.",
         "from_body": true
       },
       "authors": "Steve Aschenbrenner et al.",
@@ -75,14 +121,14 @@
       "relevance": 0.9,
       "title": "Teachy Mini: Development and Preliminary Evaluation of a Knowledge-Based Generative Social Robot for Higher Education",
       "tldr": "KNOWLEDGE-BASED GENERATIVE SOCIAL ROBOT FOR TUTORING",
-      "highlight": "This research demonstrates how knowledge-based design and retrieval-augmented generation can create responsible tutoring behaviors in social robots, contributing to the RwB goal of AI-mediated embodied learning.",
+      "highlight": "This work introduces Teachy Mini, a generative social robot using knowledge-based design to provide responsible tutoring behavior, aligning with RwB's focus on embodied social robots and AI-mediated learning.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.22345v1/Figure1.png",
       "tier": "match",
       "card": {
-        "one_liner": "Teachy Mini is a knowledge-based generative social robot designed for responsible tutoring in higher education.",
-        "key_idea": "Operationalizes Knowledge-Based Design (KBD) using system prompting, retrieval-augmented generation (RAG), and stateful prompt orchestration to provide personalized, grounded, and pedagogically sound tutoring.",
-        "evaluation": "A between-subjects study (N=24) comparing Teachy Mini to a non-KBD control. Teachy Mini was perceived as significantly more responsible, though learning gains were not significantly different.",
+        "one_liner": "Teachy Mini is a knowledge-based generative social robot designed for responsible, personalized tutoring in higher education.",
+        "key_idea": "Operationalizes Knowledge-Based Design (KBD) using system prompting, retrieval-augmented generation (RAG), and stateful prompt orchestration to integrate self-, user-, and context-knowledge into an LLM-driven robot.",
+        "evaluation": "Between-subjects study (N=24) comparing KBD vs. control. Measured via knowledge tests and scales; Teachy Mini showed significantly higher perceived responsible behavior.",
         "limitation": "Preliminary evaluation with a small sample size (N=24) and a single-session interaction context.",
         "from_body": true
       },
@@ -98,14 +144,14 @@
       "relevance": 0.9,
       "title": "StARS: Socially Appropriate Robot Actions via a Recommender System-Driven Approach",
       "tldr": "PERSONALIZED SOCIAL ROBOT ACTION GENERATION",
-      "highlight": "StARS uses a recommender system-driven approach to generate user-specific appropriateness scores for robot actions, supporting the RwB goal of improving human-robot interaction through personalized social norms.",
+      "highlight": "StARS uses a recommender system framework to generate user-specific appropriateness scores for robot actions, supporting the RwB goal of personalized human-robot interaction.",
       "funding": "",
       "image": "https://arxiv.org/html/2607.21802v1/figures/manners-cropped-2.jpeg",
       "tier": "match",
       "card": {
         "one_liner": "StARS personalizes robot action selection by treating social appropriateness as a recommender system preference problem.",
-        "key_idea": "A model-agnostic framework combining collaborative filtering (matrix factorization) with learnable scene representations using residual fusion to predict user-specific appropriateness scores.",
-        "evaluation": "Evaluated on MannersDB+ and SocNav1 using various backbones (MLPs, GNNs); metrics included RMSE, MSE, Pearson r, and CCC via five-fold cross-validation.",
+        "key_idea": "A model-agnostic framework using multi-task matrix factorization and residual fusion to combine collaborative filtering with learnable scene representations for user-specific appropriateness scores.",
+        "evaluation": "Evaluated on MannersDB+ and SocNav1 using various backbones (MLPs, GNNs). Metrics include RMSE, MSE, Pearson r, and CCC; results show statistically significant improvements.",
         "limitation": "Not clearly stated.",
         "from_body": true
       },
@@ -133,72 +179,26 @@
     },
     {
       "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.AI",
-      "relevance": 0.8,
-      "title": "Do Visual Features Improve Other-Initiated Repair Detection? A Dyadic Multimodal Approach",
-      "tldr": "MULTIMODAL OTHER-INITIATED REPAIR DETECTION",
-      "highlight": "This work demonstrates that incorporating visual features like gaze and gestures improves the detection of other-initiated repairs, supporting HyECHO's focus on multimodal social perception and listener modeling.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2607.23845v1/x1.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Visual features improve the detection and classification of other-initiated repairs in multimodal conversational dialogue.",
-        "key_idea": "A hierarchical multimodal model integrating text, audio, and CA-grounded visual features (gaze, facial expressions, posture, gestures) extracted via OpenFace and MediaPipe Holistic.",
-        "evaluation": "Evaluated on NOXI (French) and CABB-S (Dutch) corpora using macro-F1; TriModal outperformed text+audio baselines and zero-shot Qwen2.5-Omni-7B.",
-        "limitation": "High class imbalance in corpora leads to high variance in classification results, particularly for rare repair types in NOXI.",
-        "from_body": true
-      },
-      "authors": "Anh Ngo et al.",
-      "ref": "arXiv:2607.23845v1",
-      "date": "2026-07-26",
-      "url": "https://arxiv.org/abs/2607.23845v1"
-    },
-    {
-      "kind": "paper",
       "project": "RwB",
-      "category": "cs.RO",
+      "category": "cs.HC",
       "relevance": 0.8,
-      "title": "ACME: A Multi-Cultural, Multi-Embodiment Social-Navigation Dataset",
-      "tldr": "CROSS-CULTURAL SOCIAL NAVIGATION DATASET",
-      "highlight": "This dataset captures goal-driven social navigation and human-robot interactions across diverse cultures and embodiments, supporting the RwB goal of improving embodied social robots.",
+      "title": "Extended Reality as a Mediation Layer for Situated Human Control in Human-Robot Teaming",
+      "tldr": "XR FOR SITUATED HUMAN-ROBOT CONTROL",
+      "highlight": "This research proposes using Extended Reality as a mediation layer to enhance human ability to shape and interrupt robot actions in dynamic environments, supporting RwB's focus on human-robot interaction.",
       "funding": "",
-      "image": "https://arxiv.org/html/2607.21964v1/x1.png",
+      "image": "https://arxiv.org/html/2607.25047v1/figures/hri-scenarios.jpg",
       "tier": "match",
       "card": {
-        "one_liner": "ACME is a large-scale, multi-cultural, multi-embodiment dataset for social robot navigation and pedestrian trajectory prediction.",
-        "key_idea": "Data collected across 5 countries using 7 robot embodiments, featuring 29.35 hours of onboard data and 43.5 hours of overhead pedestrian tracking with human-verified labels.",
-        "evaluation": "Evaluated via qualitative and quantitative analysis against prior datasets; benchmarked state-of-the-art vision navigation and pedestrian trajectory prediction models.",
-        "limitation": "Varying IRB privacy requirements led to different anonymization levels (e.g., full body segmentation), potentially hindering off-the-shelf vision model usage.",
+        "one_liner": "XR should act as a bidirectional mediation layer for situated human control in human-robot teaming.",
+        "key_idea": "Proposes four mediation functions and six design dimensions to make robot autonomy inspectable, adjustable, and accountable via spatial grounding and multimodal interaction in dynamic environments.",
+        "evaluation": "Not clearly stated; the paper outlines a research agenda and suggests operational tests rather than reporting experimental results.",
+        "limitation": "The paper is a position piece providing a conceptual framework and research agenda rather than a validated system.",
         "from_body": true
       },
-      "authors": "Shashank Rao Marpally et al.",
-      "ref": "arXiv:2607.21964v1",
-      "date": "2026-07-24",
-      "url": "https://arxiv.org/abs/2607.21964v1"
-    },
-    {
-      "kind": "paper",
-      "project": "MIMIC",
-      "category": "cs.LG",
-      "relevance": 0.7,
-      "title": "Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness",
-      "tldr": "CAUSAL IMPACT BOUNDS FOR ML-ASSISTED DECISIONS",
-      "highlight": "This work proposes a partial-identification approach to bound the causal effect of new ML models using prior RCT data and counterfactual correctness. It is relevant to MIMIC's focus on societal-scale simulation and impact analysis of human-AI societies.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2607.21806v1/3_threshold_gt3/3_age_group_bounds.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Constructs causal impact bounds for new ML models using prior RCT data and counterfactual correctness.",
-        "key_idea": "A partial-identification approach using monotonicity assumptions on individual-level 'counterfactual correctness' and subgroup predictive performance to bound downstream outcomes of untrialed models.",
-        "evaluation": "Evaluated via a semi-synthetic simulation study; results showed more informative bounds compared to prior work.",
-        "limitation": "Requires 'true labels' to be observed for all RCT individuals and assumes predictions do not influence true labels.",
-        "from_body": true
-      },
-      "authors": "Jonathan Zhang et al.",
-      "ref": "arXiv:2607.21806v1",
-      "date": "2026-07-23",
-      "url": "https://arxiv.org/abs/2607.21806v1"
+      "authors": "Jens Grubert et al.",
+      "ref": "arXiv:2607.25047v1",
+      "date": "2026-07-27",
+      "url": "https://arxiv.org/abs/2607.25047v1"
     }
   ]
 }

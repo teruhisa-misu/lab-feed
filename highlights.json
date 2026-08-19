@@ -2,100 +2,25 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-08-18"
+    "generated": "2026-08-19"
   },
   "slides": [
     {
-      "kind": "paper",
-      "project": "MIMIC",
-      "category": "cs.MA",
-      "relevance": 1.0,
-      "title": "Insurance as AI Risk Infrastructure: A Generative-Agent Simulation of AI Adoption",
-      "tldr": "LLM-AGENT SIMULATION OF AI ADOPTION AND INSURANCE",
-      "highlight": "This work uses an LLM-driven agent-based social simulation to analyze how insurance frameworks can mitigate financial risks and accelerate AI adoption, aligning with MIMIC's focus on societal-scale simulation of human-AI societies.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.15181v1/motivation.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Insurance reduces financial risk for firms, accelerating AI adoption and improving overall market solvency.",
-        "key_idea": "An LLM-driven agent-based social simulation (LABSS) using an Attention-Assessment-Decision framework to model how insurance hedges stochastic AI operational risks.",
-        "evaluation": "Validated via mechanism diagnostics and path-level tests across three seeds; results show AI adoption rose from 74.97% to 84.38% with insurance.",
-        "limitation": "Not clearly stated.",
-        "from_body": true
-      },
-      "authors": "Yixuan Yuan et al.",
-      "ref": "arXiv:2608.15181v1",
-      "date": "2026-08-15",
-      "url": "https://arxiv.org/abs/2608.15181v1"
-    },
-    {
-      "kind": "paper",
+      "kind": "funding",
       "project": "RwB",
-      "category": "cs.HC",
+      "category": "Intelligent Living",
       "relevance": 1.0,
-      "title": "Pluralistic Human-Robot Interaction: Designing for Robot Interaction with Diverse Communities",
-      "tldr": "FRAMEWORK FOR INCLUSIVE SOCIAL ROBOT INTERACTION",
-      "highlight": "This paper proposes a Pluralistic HRI framework to address social complexity and human diversity in robot deployments, which is relevant to RwB's focus on embodied social robots.",
+      "title": "Unitree R1 Humanoid Robots Available on AliExpress",
+      "tldr": "ACCESSIBLE HUMANOID ROBOTS FOR EMBODIED AI RESEARCH",
+      "highlight": "The availability of humanoid robots for under $5000 democratizes access to embodied AI research, supporting the goals of RwB in human-robot interaction.",
       "funding": "",
-      "image": "https://arxiv.org/html/2608.16049v1/diagram-bushi2.png",
+      "image": "https://www.intelligentliving.co/wp-content/uploads/2026/04/now-you-can-buy-unitree-r1-humanoid-robots-on-aliexpress-democratized-access-to-embodied-ai-research-for-under-5000.jpg",
       "tier": "match",
-      "card": {
-        "one_liner": "Proposes a Pluralistic HRI framework to design social robots that treat human diversity as foundational.",
-        "key_idea": "A framework integrating seven principles: pluralism, civic dialogue, perspective-taking, empathy, intercultural competence, cultural humility, and moral imagination to support inclusive, adaptive, and ethically grounded interactions.",
-        "evaluation": "Not clearly stated; the paper outlines proposed evaluation metrics (e.g., inclusion, dialogue quality) rather than reporting experimental results.",
-        "limitation": "Risks include reinforcing stereotypes, excluding non-normative users, and privileging dominant cultural assumptions if diversity is not centrally addressed.",
-        "from_body": true
-      },
-      "authors": "Raj Korpan",
-      "ref": "arXiv:2608.16049v1",
-      "date": "2026-08-17",
-      "url": "https://arxiv.org/abs/2608.16049v1"
-    },
-    {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.HC",
-      "relevance": 0.9,
-      "title": "Closing the Affective Loop: Multimodal Speaker-Listener Emotion-Dynamics-Aware Empathetic Social Robots",
-      "tldr": "MULTIMODAL EMOTION-DYNAMICS FOR EMPATHETIC ROBOTS",
-      "highlight": "This work introduces AffectLoop, which tracks speaker verbal and facial dynamics alongside the listener's affective state to improve embodied interaction. It is relevant to HyECHO's focus on multimodal social perception and listener modeling within human-AI teams.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.16686v1/system.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "AffectLoop improves robot empathy by conditioning LLM responses on both speaker and listener affective dynamics.",
-        "key_idea": "A multimodal system tracking speaker verbal/facial VAD and robot behavioral states to generate emotionally congruent spoken responses and embodied behaviors via GPT-4.1-nano.",
-        "evaluation": "Pilot within-subject study (5 participants) using Likert scales and log analysis. Results showed higher user satisfaction and better valence-based distress recovery.",
-        "limitation": "The evaluation was a small-scale pilot study with only five participants.",
-        "from_body": true
-      },
-      "authors": "Zi Haur Pang et al.",
-      "ref": "arXiv:2608.16686v1",
-      "date": "2026-08-17",
-      "url": "https://arxiv.org/abs/2608.16686v1"
-    },
-    {
-      "kind": "paper",
-      "project": "MIMIC",
-      "category": "cs.AI",
-      "relevance": 0.9,
-      "title": "Physics of Agents: Statistical Mechanics Predicts Collective Behavior of AI Agents",
-      "tldr": "STATISTICAL MECHANICS PREDICTS AI AGENT COLLECTIVE BEHAVIOR",
-      "highlight": "This research uses a statistical-mechanics formalism to predict collective dynamics, such as polarization and consensus, in communities of language-model agents. It is relevant to MIMIC's focus on societal-scale simulation and the impact analysis of hybrid human-AI societies.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.16578v1/main/Figures/main_01_teaser_opinion_flow.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Statistical mechanics predicts collective AI agent behavior, showing interactions drive conviction and truth-seeking on objective tasks.",
-        "key_idea": "An Ising-model-based formalism where agents update opinions to minimize social pressure, using intrinsic fields and signed-graph couplings to predict individual and group trajectories.",
-        "evaluation": "Evaluated on >10,000 communities across four LLMs using objective (MATH) and subjective political datasets; outperformed persistence and mean-field baselines in opinion prediction.",
-        "limitation": "Subjective questions showed systematic ideological drift toward the right, indicating interaction may amplify underlying model biases.",
-        "from_body": true
-      },
-      "authors": "Batu El et al.",
-      "ref": "arXiv:2608.16578v1",
-      "date": "2026-08-17",
-      "url": "https://arxiv.org/abs/2608.16578v1"
+      "card": null,
+      "authors": "",
+      "ref": "Intelligent Living",
+      "date": "2026-08-16",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1rUkQ5UGNnOUpaMWZCcG1ncm9pTGdId1hOdFlVZVl6cEZMMGZ4aGtmaTgyWlU5US1vSjc5ZEhRclAzYjFlZEtScWMtNzMteVg2NFJ4eDUybXFLZHdsTlE1ZUNKOExXYzladTR5M2VVbC1POGMyWDF4bG1xX0xWekU?oc=5"
     },
     {
       "kind": "funding",
@@ -103,8 +28,8 @@
       "category": "AI Insider",
       "relevance": 0.9,
       "title": "Study Explores Impact on Trust When Expressive Humanoid Robots Make Mistakes",
-      "tldr": "HUMANOID ROBOT TRUST STUDY",
-      "highlight": "This study examines how expressive humanoid robots affect user trust when errors occur, providing insights relevant to RwB's focus on human-robot interaction.",
+      "tldr": "IMPACT OF ROBOT MISTAKES ON TRUST",
+      "highlight": "This study examines how expressive humanoid robots affect user trust when errors occur, which is relevant to RwB's focus on human-robot interaction.",
       "funding": "",
       "image": "https://theaiinsider.tech/wp-content/uploads/2026/08/Humanoid-face-2.png",
       "tier": "match",
@@ -113,98 +38,6 @@
       "ref": "AI Insider",
       "date": "2026-08-15",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSVBQTXZHOFhQRTdoR0M2ZXhPa1NJbnU1Z0NnX1ZKNlhUWFdUTGphZnVWa1FGOHgyY3drbC1RVFd2N3lQMlpha1lCRnUxX3V5MWpfV3FudWV5Z3ZkR0VaaFNSZjlVdGY5WXpNdmQyTm50dnV6N3A2aXFnWkhXQjdaM1RZaVJzazk5OXY3eWR2WjBvRGdSS0FOR2NUVlFFZWxiRkN6VXZxa0V1WUVsZ3htU2p4djM?oc=5"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.RO",
-      "relevance": 0.8,
-      "title": "Locomotion Variability and User Experience in Smart Wheelchair Human-Robot Interaction",
-      "tldr": "PRESERVING MOVEMENT VARIABILITY IMPROVES USER AGENCY IN SMART WHEELCHAIRS",
-      "highlight": "This research demonstrates that preserving natural movement variability in shared control for smart wheelchairs increases perceived agency and usefulness. It is relevant to RwB's focus on human-robot interaction and embodied learning.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.11417v1/Figure_1.JPG",
-      "tier": "match",
-      "card": {
-        "one_liner": "Preserving natural human movement variability in smart wheelchair assistance improves user agency and perceived usefulness.",
-        "key_idea": "A shared control framework using an inverted bell-shaped variability factor to minimize assistance in task-irrelevant areas while maintaining guidance at task-critical start and end points.",
-        "evaluation": "User study with 18 participants pushing an intelligent powered wheelchair; measured via ANOVA on trajectory variance, endpoint error, and Likert-scale questionnaires.",
-        "limitation": "Not clearly stated.",
-        "from_body": true
-      },
-      "authors": "Sean Kille et al.",
-      "ref": "arXiv:2608.11417v1",
-      "date": "2026-08-11",
-      "url": "https://arxiv.org/abs/2608.11417v1"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.RO",
-      "relevance": 0.7,
-      "title": "Learning Varying Physical Therapist-Patient Interactions for Robot-mediated Upper Limb Task-Specific Training",
-      "tldr": "LEARNING PERSONALIZED THERAPIST-PATIENT INTERACTIONS FOR REHABILITATION ROBOTS",
-      "highlight": "This work proposes a Learning-from-Demonstration framework to capture personalized therapist-patient interactions, supporting RwB's focus on embodied social robots and human-robot interaction.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.15995v1/tasks.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "A framework to learn and generalize personalized physical therapist-patient interactions for robot-mediated upper limb training.",
-        "key_idea": "Uses Task-Parameterized Gaussian Mixture Models (TPGMM) to map patient joint kinematics to therapist-applied torques, generalizing learned interactions to unseen task variations.",
-        "evaluation": "Evaluated with 14 mock therapist-patient pairs across three tasks. TPGMM was compared against a Look-Up Table (LUT) using reconstruction error and coverage.",
-        "limitation": "Reconstructed interactions in unseen variations deviated slightly from actual interactions, though accuracy improved as task complexity increased.",
-        "from_body": true
-      },
-      "authors": "Jia Quan Loh et al.",
-      "ref": "arXiv:2608.15995v1",
-      "date": "2026-08-17",
-      "url": "https://arxiv.org/abs/2608.15995v1"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.CV",
-      "relevance": 0.7,
-      "title": "HUI360: A 360° Egocentric Dataset and Baselines for Human-Robot Interaction Anticipation",
-      "tldr": "DATASET FOR HUMAN-ROBOT INTERACTION ANTICIPATION",
-      "highlight": "This work introduces HUI360, a large-scale 360° egocentric dataset and baselines for anticipating human intentions, which is relevant to RwB's focus on embodied social robots and human-robot interaction.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.11051v1/illustrations/PapersFigures_Concept_figure.jpg",
-      "tier": "match",
-      "card": {
-        "one_liner": "HUI360 is the largest in-the-wild 360° egocentric dataset for anticipating human-robot physical interactions.",
-        "key_idea": "An automated pipeline using YOLOv11x, SAM2.1, and ViTPose/Sapiens to detect, track, and annotate interactions based on mask intersection with robot zones.",
-        "evaluation": "Evaluated using RF, MLP, and LSTM baselines on HUI360 and SSUP-A datasets; LSTM performed best across transfer and forecasting tasks.",
-        "limitation": "Only captures physical interactions, ignoring nuanced social signals like gaze, hesitation, or verbal engagement.",
-        "from_body": true
-      },
-      "authors": "Raphael Lorenzo-Louis et al.",
-      "ref": "arXiv:2608.11051v1",
-      "date": "2026-08-11",
-      "url": "https://arxiv.org/abs/2608.11051v1"
-    },
-    {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.CL",
-      "relevance": 0.4,
-      "title": "Leading-Silence Augmentation and Multi-Stage Synthetic Supervision for the Second MLC-SLM Challenge",
-      "tldr": "MULTILINGUAL CONVERSATIONAL SPEECH MODELING",
-      "highlight": "This work addresses speaker diarization and recognition in unsegmented multilingual conversations, contributing to HyECHO's focus on identity recognition and diarization.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2608.14150v1/image.png",
-      "tier": "related",
-      "card": {
-        "one_liner": "Improves multilingual conversational speech diarization and understanding using leading-silence augmentation and synthetic QA supervision.",
-        "key_idea": "Task 1 uses VibeVoice-ASR-7B with random leading-silence cropping and EMA training. Task 2 uses Qwen3-Omni-30B-A3B-Instruct fine-tuned on synthetic QA pairs filtered for audio-dependency and distribution-matched.",
-        "evaluation": "Task 1: tcpMER reduced from 18.30% to 16.73%. Task 2: accuracy increased from 78.0% to 86.0% on official evaluation sets.",
-        "limitation": "Task 1 results do not establish robustness to turn-boundary errors or provide per-language/duration analysis.",
-        "from_body": true
-      },
-      "authors": "Kexin Shi et al.",
-      "ref": "arXiv:2608.14150v1",
-      "date": "2026-08-14",
-      "url": "https://arxiv.org/abs/2608.14150v1"
     }
   ]
 }

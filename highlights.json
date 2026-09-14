@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-09-11"
+    "generated": "2026-09-14"
   },
   "slides": [
     {
@@ -23,182 +23,21 @@
       "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxORUlkXzdxY3NiZHZMN0JxQTE1aS1QbXdYemRXSEVzal9tY2diY19UVUcxMWlfeGo1NVdvbnM5ampCazZ4a2ppN1h6d1o1dnQ1YkhhdVFPajYwMGl0T19oVEVUbEVqdldacVh0VFpuX2lpS21aSkZwOW5ZcU9wNEQ2ZWFmWThHYmJTY21KUHhCQVpPeFFsX1FhenNMaHBWT2F5LW1wMTZwVk1EdFdaUG9fTUdxMll1MjlDZEpJRUpRcFVMT0lNazRxQ1hMUWtVb2dzRmRUTjQ3OURMUmkwSmlHQUtRRlNsWEZIdjVSRE9qbGpTZw?oc=5"
     },
     {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "eess.AS",
-      "relevance": 0.9,
-      "title": "Less can be More: What Aspects of Speech Drive End-of-Turn Detection",
-      "tldr": "PROSODIC SIGNALS DRIVE TURN-TAKING DETECTION",
-      "highlight": "This research identifies that acoustic and prosodic features are more effective than semantic text for end-of-turn detection, contributing to HyECHO's goals of multimodal social perception and listener modeling.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.11066v1/farlat_publication.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Acoustic and prosodic cues are more effective for end-of-turn detection than adding semantic text signals.",
-        "key_idea": "A trimodal classifier (APT) using a frozen ASR encoder, handcrafted prosody, and MiniLM embeddings, evaluated via controlled ablation of all modality subsets.",
-        "evaluation": "Tested on 5,000 utterances from a proprietary English telephony corpus. A+P achieved best F1 (0.93) and lowest false alarms.",
-        "limitation": "Results are limited to in-domain two-speaker English telephony; text may be more useful in noisy or low-resource language conditions.",
-        "from_body": true
-      },
-      "authors": "Rini Sharon et al.",
-      "ref": "arXiv:2609.11066v1",
-      "date": "2026-09-10",
-      "url": "https://arxiv.org/abs/2609.11066v1"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.RO",
-      "relevance": 0.9,
-      "title": "HiBRIDGE: A Hierarchical Bayesian Neural Network Framework for Interpretable Dialogue Management in Group-Robot Interaction",
-      "tldr": "INTERPRETABLE DIALOGUE MANAGEMENT FOR GROUP-ROBOT INTERACTION",
-      "highlight": "HiBRIDGE uses a hierarchical Bayesian neural network to manage group-robot dialogue, providing uncertainty-aware predictions and more interpretable explanations of robot behavior. This is relevant to RwB's focus on embodied social robots and human-robot interaction.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.08678v1/main_figure.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "HiBRIDGE is a hierarchical Bayesian framework for interpretable dialogue management in group-robot interactions.",
-        "key_idea": "It uses a Bayesian neural network to handle uncertainty and a hierarchical classification structure to decompose behavior selection into semantically meaningful stages (e.g., initiative vs. responsive).",
-        "evaluation": "Evaluated on three offline HRI datasets, an online study (N=20), and an in-person study (N=12). Bayesian models outperformed deterministic and LLM baselines.",
-        "limitation": "Not clearly stated.",
-        "from_body": true
-      },
-      "authors": "Massimiliano Nigro et al.",
-      "ref": "arXiv:2609.08678v1",
-      "date": "2026-09-08",
-      "url": "https://arxiv.org/abs/2609.08678v1"
-    },
-    {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.CL",
-      "relevance": 0.9,
-      "title": "Using Semantic Uncertainty to Estimate Transition Relevance in Turn-taking",
-      "tldr": "ESTIMATING TURN-TAKING OPPORTUNITIES VIA SEMANTIC UNCERTAINTY",
-      "highlight": "This research uses LLM-derived semantic uncertainty to anticipate Transition Relevance Places in unscripted interaction, contributing to the listener modeling goals of HyECHO.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.10934v1/Images/TRP_formalism_example.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "Semantic uncertainty from LLM continuations improves the prediction of within-turn transition relevance places in dialogue.",
-        "key_idea": "The method samples LLM continuations for turn prefixes and measures semantic dispersion via Semantic Nearest Neighbor Entropy (SNNE) to identify local shifts in semantic constraint.",
-        "evaluation": "Evaluated on a real-time listener response dataset using F0.5, TNR, and balanced accuracy; outperformed prompt-based, SFT, and predictive-entropy baselines.",
-        "limitation": "The procedure is computationally costly, and the authors leave real-time deployment in dialogue systems for future work.",
-        "from_body": true
-      },
-      "authors": "Muhammad Umair et al.",
-      "ref": "arXiv:2609.10934v1",
-      "date": "2026-09-10",
-      "url": "https://arxiv.org/abs/2609.10934v1"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.CV",
-      "relevance": 0.9,
-      "title": "Social Intuition vs. Machine Reasoning: Anticipating Human-Robot Interaction from multiple modalities",
-      "tldr": "BENCHMARKING HUMAN VS. MACHINE INTERACTION PREDICTION",
-      "highlight": "This research compares human social intuition with machine reasoning in predicting human-robot interaction, which is relevant to RwB's focus on embodied social robots.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.07394v1/illustrations/annotation_interface.jpg",
-      "tier": "match",
-      "card": {
-        "one_liner": "Humans significantly outperform VLMs and pose-based models in anticipating human-robot interaction from egocentric video.",
-        "key_idea": "Benchmarking human intuition against lightweight pose models (LSTM, ST-GCN, SkateFormer) and various VLMs using pose-only and full egocentric video inputs to predict interaction intent.",
-        "evaluation": "Evaluated on 100 HUI360 test tracks using F1-score, accuracy, precision, and recall. Human annotators outperformed all machine models, especially with full video.",
-        "limitation": "VLMs struggle to reason over simultaneous temporal, spatial, and social cues, often reducing the task to simple approach detection.",
-        "from_body": true
-      },
-      "authors": "Raphael Lorenzo-Louis et al.",
-      "ref": "arXiv:2609.07394v1",
-      "date": "2026-09-07",
-      "url": "https://arxiv.org/abs/2609.07394v1"
-    },
-    {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.MA",
-      "relevance": 0.8,
-      "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
-      "tldr": "MULTI-AGENT REASONING FOR SPEAKER RELATIONSHIP INFERENCE",
-      "highlight": "This work introduces a training-free multi-agent reasoning framework to infer speaker relationships from conversations, contributing to the social perception of team states relevant to HyECHO.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.09628v1/Method.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "A training-free multi-agent reasoning framework for inferring speaker relationships from multimodal spoken conversations.",
-        "key_idea": "Introduces Multi-Role Multi-Agent Debate (assigning agents complementary social perspectives) and Multi-Agent Compete (a pairwise elimination tournament) to resolve ambiguous relational cues without task-specific training.",
-        "evaluation": "Evaluated on the Seamless Interaction dataset (text, audio, audio+text) against zero-shot and debate baselines. Results show improvements in macro F1 and accuracy.",
-        "limitation": "High inference-time cost due to multiple LLM calls, limited to one benchmark, and imbalanced data for some relationship categories.",
-        "from_body": true
-      },
-      "authors": "Yaohan Guan et al.",
-      "ref": "arXiv:2609.09628v1",
-      "date": "2026-09-09",
-      "url": "https://arxiv.org/abs/2609.09628v1"
-    },
-    {
-      "kind": "paper",
-      "project": "HyECHO",
-      "category": "cs.CL",
-      "relevance": 0.8,
-      "title": "ConversationalVoice: Full-Duplex Speech Data from Real Conversations through Source-Faithful Reconstruction and Conversation-Grounded Expansion",
-      "tldr": "FULL-DUPLEX SPEECH DATA PIPELINE",
-      "highlight": "This work introduces a pipeline to reconstruct and expand real-world two-speaker conversations, preserving turn-taking, overlaps, and interruptions. It is relevant to HyECHO's focus on diarization and listener modeling in hybrid human-AI team states.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.08147v1/pipeline-architecture.png",
-      "tier": "match",
-      "card": {
-        "one_liner": "ConversationalVoice transforms real two-speaker audio into separated, reconstructed, and expanded full-duplex speech training data.",
-        "key_idea": "A three-stage pipeline: separation recovers original tracks; reconstruction resynthesizes clean audio preserving source timing/words; expansion generates new, context-grounded dialogue with explicit interaction planning.",
-        "evaluation": "Automatic metrics (NISQA, DNSMOS, WavLM) and Gemini-based scoring. Results show high speaker similarity, acoustic quality, and dialogue coherence.",
-        "limitation": "Evaluation is entirely automatic; downstream gains in full-duplex model training have not yet been measured.",
-        "from_body": true
-      },
-      "authors": "Richard Yucheng He et al.",
-      "ref": "arXiv:2609.08147v1",
-      "date": "2026-09-08",
-      "url": "https://arxiv.org/abs/2609.08147v1"
-    },
-    {
-      "kind": "paper",
-      "project": "RwB",
-      "category": "cs.RO",
-      "relevance": 0.8,
-      "title": "Predictive-Coding-Based Autonomous Regulation of Internally Generated and Externally Coupled Processing in Human-Robot Interaction",
-      "tldr": "AUTONOMOUS REGULATION OF INTERNAL AND EXTERNAL PROCESSING IN HRI",
-      "highlight": "This research proposes a mechanism using a predictive-coding-inspired variational recurrent neural network to balance internal predictions and external sensory input during physical human-robot interaction. It is relevant to RwB's focus on embodied social robots and human-robot interaction.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2609.06888v1/figs/pvrnn_err_monitor.jpg",
-      "tier": "match",
-      "card": {
-        "one_liner": "A predictive-coding mechanism for robots to autonomously balance internal predictions and external sensory input during interaction.",
-        "key_idea": "A PV-RNN uses accumulated reconstruction error to switch between high-meta-prior (internal-driven) and low-meta-prior (sensory-driven) regimes, regulating the balance between learned dynamics and sensory accommodation.",
-        "evaluation": "Tested on a Torobo humanoid across three physical interaction tasks. Results showed low-meta-prior regimes reduced reconstruction error, prospective prediction error, and physical interaction conflict.",
-        "limitation": "The regulatory policy and hyperparameters are predefined and calibrated manually rather than learned autonomously from training data.",
-        "from_body": true
-      },
-      "authors": "Henrique Oyama et al.",
-      "ref": "arXiv:2609.06888v1",
-      "date": "2026-09-07",
-      "url": "https://arxiv.org/abs/2609.06888v1"
-    },
-    {
       "kind": "funding",
       "project": "RwB",
-      "category": "IEEE Spectrum",
-      "relevance": 0.7,
-      "title": "Persona AI Brings Calm Experience to the Hectic Humanoid Industry",
-      "tldr": "PERSONA AI HUMANOID DEVELOPMENT",
-      "highlight": "Persona AI is developing humanoid technology, which is relevant to RwB's focus on embodied social robots.",
-      "funding": "Persona AI",
-      "image": "https://spectrum.ieee.org/media-library/image.png?id=52515062&width=1200&height=600&coordinates=0%2C158%2C0%2C159",
+      "category": "finance.biggo.com",
+      "relevance": 1.0,
+      "title": "Former Li Auto AI Chief Scientist Chen Wei Raises Funds for Embodied AI Home Robot Startup",
+      "tldr": "FUNDING FOR EMBODIED AI HOME ROBOTS",
+      "highlight": "A new embodied AI startup targeting home robots has raised funding, aligning with RwB's focus on embodied social robots.",
+      "funding": "Hundreds of Millions of Yuan",
+      "image": "https://img.biggo.com/CaHDjUAxfBZmRvDjwdkXU1f8JAd-xr1zZvsPT2Gl1Ns/fit/1200/0/sm/0/aHR0cHM6Ly9pbWcuYmdvLm9uZS9uZXdzLWltYWdlL2FpX2dlbmVyYXRlZC8yMDI2LTA5LzU5ZjA5NTk5LTIyZTMtNDY4Zi04ZjE4LTRkY2I5ZmZlODkyMV8xNzg5MzE1MTk1X2RlZmF1bHQuanBn.jpg",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "IEEE Spectrum",
-      "date": "2026-09-10",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5COGFhcUVRZXRCVktwZ0dlUEpoSWtBMEI4NmNlcEp1UXBGRVJMdGc2QV9KVmJlMDFvbDNFRFItTTlCLUtZZ3RGSmw5LVdlLUFiRlF6VmhQdzZEZnNLSW05dVJrMGdMYW10ZXhlVDl3?oc=5"
+      "ref": "finance.biggo.com",
+      "date": "2026-09-13",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1NakRUb0tlUVdORUJXZ25rU1NYTkVqSWVjdGZMTk9adVl0bjFyYi1veUVpczM3LXMwZW5Rd3lROFVXTjNsXzYycEZqemVNaVRBOFNuSlJYbEdSMDRaYVExRXBWZWliY3dXMzh2N0VqYWd0WmtyQ3c?oc=5"
     }
   ]
 }

@@ -2,25 +2,25 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "HSS · MIMIC · HyECHO · RwB",
-    "generated": "2026-10-02"
+    "generated": "2026-10-05"
   },
   "slides": [
     {
       "kind": "press",
       "project": "RwB",
-      "category": "AgiBot",
+      "category": "Vietnam Investment Review - VIR",
       "relevance": 1.0,
-      "title": "AGIBOT and Chimelong Launch Large-Scale Embodied AI Theme Park with More Than 300 Robots - AgiBot",
+      "title": "Vietnam launches first embodied AI conference to advance robotics ecosystem - Vietnam Investment Review - VIR",
       "tldr": "PRESS",
-      "highlight": "AGIBOT and Chimelong Launch Large-Scale Embodied AI Theme Park with More Than 300 Robots    AgiBot",
+      "highlight": "Vietnam launches first embodied AI conference to advance robotics ecosystem    Vietnam Investment Review - VIR",
       "funding": "",
-      "image": "",
+      "image": "https://vir.com.vn/stores/news_dataimages/2026/102026/02/15/in_social/vietnam-launches-first-embodied-ai-conference-to-advance-robotics-ecosystem-20261002153134.jpg?randTime=1791201761",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "AgiBot",
-      "date": "2026-10-01",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5QdVhGUTVMZXZZWGZveHQ4R3I2b2h0ZjdEbDlKLWVRTDdPeFNWN2hXLW9uZkFWTkhzdG1hcHdNaXVRWm9RdE9Dc0ZiMnMyWng3eFBuME5WbnZUSzhGTmE0?oc=5"
+      "ref": "Vietnam Investment Review - VIR",
+      "date": "2026-10-02",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeFRQaXY3MzhMcGFfT3M2ZXMwOVQxU09mMjgtUkhlUnRNVGljanhGRjM3X01ueG1DSUE5YlB5U2ZaR2lHREVqeWIzWlNCd21uMmw5LXZ5LWszSlRfLUJEbmdlN05qVFFMVlI5b1k2UU5GZF9mMzBHVm4wQnZSVXdZZVhrRHVMZ1dtYmYtNzVlMUY0VVJNQWJhb2tfTkNEUTZ4QWcxQVVjRlVwQQ?oc=5"
     },
     {
       "kind": "funding",

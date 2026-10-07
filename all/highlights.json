@@ -2,7 +2,7 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-10-06"
+    "generated": "2026-10-07"
   },
   "slides": [
     {
@@ -14,7 +14,7 @@
       "tldr": "PRESS",
       "highlight": "Vietnam launches first embodied AI conference to advance robotics ecosystem    Vietnam Investment Review - VIR",
       "funding": "",
-      "image": "https://vir.com.vn/stores/news_dataimages/2026/102026/02/15/in_social/vietnam-launches-first-embodied-ai-conference-to-advance-robotics-ecosystem-20261002153134.jpg?randTime=1791288160",
+      "image": "https://vir.com.vn/stores/news_dataimages/2026/102026/02/15/in_social/vietnam-launches-first-embodied-ai-conference-to-advance-robotics-ecosystem-20261002153134.jpg?randTime=1791374569",
       "tier": "match",
       "card": null,
       "authors": "",
@@ -61,9 +61,9 @@
       "project": "MOSAIC",
       "category": "Business Insider",
       "relevance": 0.3,
-      "title": "Here's the pitch deck a robotics startup used to raise $75 million to automate drug manufacturing. - Business Insider",
+      "title": "This robotics startup raised $75 million to automate drug manufacturing. See the pitch deck. - Business Insider",
       "tldr": "FUNDING",
-      "highlight": "Here's the pitch deck a robotics startup used to raise $75 million to automate drug manufacturing. Business Insider",
+      "highlight": "This robotics startup raised $75 million to automate drug manufacturing. See the pitch deck.",
       "funding": "",
       "image": "https://i.insider.com/6ac41bbd225e4c4a50a38278?width=1200&format=jpeg",
       "tier": "match",
@@ -76,36 +76,36 @@
     {
       "kind": "press",
       "project": "ADAM-CHAT",
-      "category": "Investing.com Canada",
+      "category": "WashingtonExec",
       "relevance": 0.3,
-      "title": "Descartes unveils AI agent coordination platform at Chicago event By Investing.com - Investing.com Canada",
+      "title": "Bad Monkey AI Launches Open-Source Library for AI Agent Coordination - WashingtonExec",
       "tldr": "PRESS",
-      "highlight": "Descartes unveils AI agent coordination platform at Chicago event By Investing.com    Investing.com Canada",
+      "highlight": "Bad Monkey AI Launches Open-Source Library for AI Agent Coordination    WashingtonExec",
       "funding": "",
       "image": "",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "Investing.com Canada",
+      "ref": "WashingtonExec",
       "date": "2026-10-06",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPR3U4Ri04SzUyUVd4NnBGSkc3dGFZeGJRc2xmZUFaRTBaOVdkWVJEM2lDWk5UVzBPc3Z6V1lZS1pGTHIwYmQ5cUNjUXJkT01RbE4yREZKX1laTi15V1R3WnF3eS16elp2dmlxbVdqS0lDWHdlQThZQjFUWkhmWFJPN215Qnd5b0FvMzc1VmxaU0xYUWZLVThMLWRMRDlucnBKVWxFX01jSnNGeVI5c2tzY3FvaWVoVjRRT1dsQjlYSVg0X2M3?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRjRBemItWC1kd2FrREpMdEM4QUZpUmVyWXB4anRWYjdyek1YaXRwNWRUR09mSHBhdTB4LWpCaklobW96R2Q5US03cFRDU2s0ZUpxckQ5cTFtd1R0VWFKVF9qQmVJWmZNU1gzRzlFUC1HSlMwYzZfNkQwcFZYTkZkMDAxU1M3LW5ZT21GXzBMd1JqbGl5cFJudWZySGxGVXpES1E?oc=5"
     },
     {
       "kind": "press",
       "project": "ADAM-CHAT",
-      "category": "Legal IT Insider",
+      "category": "HPCwire",
       "relevance": 0.3,
-      "title": "Flank launches senior legal advisory board to shape agentic AI strategy - Legal IT Insider",
+      "title": "Keysight Advances Its Design Software with Agentic AI - HPCwire",
       "tldr": "PRESS",
-      "highlight": "Flank launches senior legal advisory board to shape agentic AI strategy    Legal IT Insider",
+      "highlight": "Keysight Advances Its Design Software with Agentic AI    HPCwire",
       "funding": "",
-      "image": "https://legaltechnology.com/wp-content/uploads/2026/10/flank-board-2.jpg",
+      "image": "https://www.hpcwire.com/aiwire/wp-content/uploads/sites/3/2026/10/Laptop.jpg",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "Legal IT Insider",
+      "ref": "HPCwire",
       "date": "2026-10-06",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQW4tMkhRRmlqbXFzdk5vRzVEaEdZMkxiMTVxOXQtT0J0RjRWM0ZjWWdIdGJRNlhzaXhSTzk4N3RLS2VXZ0lkT29kaWdFbWhGcXJFOTQxMW5PVEh2UGRLaF8xNlZaWlp6aHgtLU1vZjJ5ZWhlOGlwZ2h6TG5QM3ZPaERtLV9tWHZZTlJaR2tvcEpHOEtUcVNpT1FQby1iVVVxdFE?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeGZlUF9Lc1FCQm9fS1laZURqZDRZUzlHZTBWZTZWRWNHQnhCcmdFTFhDc29hajVEWnFFOTEzYjRkQV9HS1FRRjhjLXgwbG04bHpHN2JhOVBPelJGNXo0czdVYmozcWZfRmtxbU1KRnBwUGhjMjQ1dXp0eEhxQzQ4c0pCd25pVTRBcXRqbU9wMEYtVE8yM3QxdnlHS1Q?oc=5"
     }
   ]
 }

@@ -2,26 +2,9 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "HSS · MIMIC · HyECHO · RwB",
-    "generated": "2026-10-09"
+    "generated": "2026-10-12"
   },
   "slides": [
-    {
-      "kind": "press",
-      "project": "RwB",
-      "category": "Robotics & Automation News",
-      "relevance": 1.0,
-      "title": "Robbyant and AFDE partner to expand embodied AI and robotics across Middle East - Robotics & Automation News",
-      "tldr": "PRESS",
-      "highlight": "Robbyant and AFDE partner to expand embodied AI and robotics across Middle East    Robotics & Automation News",
-      "funding": "",
-      "image": "https://roboticsandautomationnews.com/wp-content/uploads/2026/10/robbyant-afde-1.jpg",
-      "tier": "match",
-      "card": null,
-      "authors": "",
-      "ref": "Robotics & Automation News",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRDR0Zzlaelh5SEI1OVNPb1hzMlNQcEg0YjVEeXVQUGtYdVJwZlZjamIxYjlTV1JObFBKdlFheWFFeGFLeEZQM2t0VHVkMWZnZUhTWUhUTEpWVHE1dXNwYXBIZXRac2dmSUJoUmJOelBTZGVrS096UFVGWmsyWklZME9yS1BzNFpHWElKaU9xTk03bzVtdmNjcXNtSHhlbjBQOFJTbklhRlREYXBQeE5aYlJpa1lTVnNVOUxCcEpVOXVMb3RteDB6ZzBHVUZWY2tRZXc?oc=5"
-    },
     {
       "kind": "press",
       "project": "RwB",
@@ -41,20 +24,20 @@
     },
     {
       "kind": "press",
-      "project": "HyECHO",
-      "category": "Pulse 2.0",
-      "relevance": 0.3,
-      "title": "Backbase Launches Conversational Banking To Bring Agentic AI To Bank Customer Service - Pulse 2.0",
+      "project": "RwB",
+      "category": "PA Media",
+      "relevance": 1.0,
+      "title": "ROBOTERA Tops Embodied AI Benchmark RoboDojo Without Additional Data or Agent RSI - PA Media",
       "tldr": "PRESS",
-      "highlight": "Backbase Launches Conversational Banking To Bring Agentic AI To Bank Customer Service    Pulse 2.0",
+      "highlight": "ROBOTERA Tops Embodied AI Benchmark RoboDojo Without Additional Data or Agent RSI    PA Media",
       "funding": "",
-      "image": "",
+      "image": "https://content-media.pa.media/press-release/picture/2026/10/09/01M4GJ8RGSMJP7CDZ8N1AA9FZG.jpg?fix=bounds&w=1200",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "Pulse 2.0",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbUlrWkRRNnNFZ0tnRXFMZGZrTzhRdXdDOVJpOXBNcXhjN204YlliaFBwTENIU09tZEtvSzdrV3lYUWpzdFl4RXl6TmZkQlZRVW41U3BkTFFmeW02MURRMnV6R3VpUGxLVE1KWjRWOUhFbzl4WE1QdUdiMXFZS2lNSWVvSGI3ZDhwZFFjSmtKcEVOZnVPREEyQnUwaXQ5TjlOa0xJQVpMTWvSAa4BQVVfeXFMTllCUTVpbU9jSEJEQU0xTjlLZ1EybnBmcjRua0VwUldGcDhmVnAySGNkRlEwTml6QkxERkJDdEJsYlZyMDF0RzNRTnhIYzhnMlBMWlluSmtfUUJwMEd1cXZQLUFWUVJNS2lmcmo4d24xZDBIaDd0Ui1HUGl5V1JJYlpuUE1lMGhNbklvZlhIV3pJZWl2SnUtVmw1Z2FjRlB2bVVlY1dicWZnbDVidzln?oc=5"
+      "ref": "PA Media",
+      "date": "2026-10-09",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWU1Ncl9sRmlrTTlyalY0VGtHQ2dHLUFvQnE4cG5EZGdORzEzeGE1T0JfZU1hMC03dThnUkNwOGdkVHRfWkdhZDZSTE1jdHo3WEFwcGtEeFhSWjVyZmptT25VUjZGclo2RFhzMmFEOG5iMXp5UnpDSG1uNzdacy03OENQVWF4NUZBYjhMNVB4RzhPYmhkd2dMUlVELWt4U3pUYmZDczluT3ZIZVhjbWstMUc1RkhtZEl2Vko2RGtlaFdFWEZaYUt3dTVMdmJkUQ?oc=5"
     }
   ]
 }

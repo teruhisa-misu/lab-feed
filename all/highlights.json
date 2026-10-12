@@ -2,26 +2,9 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "ARXIV · PRESS · FUNDING",
-    "generated": "2026-10-09"
+    "generated": "2026-10-12"
   },
   "slides": [
-    {
-      "kind": "press",
-      "project": "RwB",
-      "category": "Robotics & Automation News",
-      "relevance": 1.0,
-      "title": "Robbyant and AFDE partner to expand embodied AI and robotics across Middle East - Robotics & Automation News",
-      "tldr": "PRESS",
-      "highlight": "Robbyant and AFDE partner to expand embodied AI and robotics across Middle East    Robotics & Automation News",
-      "funding": "",
-      "image": "https://roboticsandautomationnews.com/wp-content/uploads/2026/10/robbyant-afde-1.jpg",
-      "tier": "match",
-      "card": null,
-      "authors": "",
-      "ref": "Robotics & Automation News",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRDR0Zzlaelh5SEI1OVNPb1hzMlNQcEg0YjVEeXVQUGtYdVJwZlZjamIxYjlTV1JObFBKdlFheWFFeGFLeEZQM2t0VHVkMWZnZUhTWUhUTEpWVHE1dXNwYXBIZXRac2dmSUJoUmJOelBTZGVrS096UFVGWmsyWklZME9yS1BzNFpHWElKaU9xTk03bzVtdmNjcXNtSHhlbjBQOFJTbklhRlREYXBQeE5aYlJpa1lTVnNVOUxCcEpVOXVMb3RteDB6ZzBHVUZWY2tRZXc?oc=5"
-    },
     {
       "kind": "press",
       "project": "RwB",
@@ -38,6 +21,23 @@
       "ref": "Robotics & Automation News",
       "date": "2026-10-09",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxORG03amhSWTdwTFRoR1k5c29FZklhNmJfRE8wTzZibzBzbUlwMEhtaGZXUTRNTnZlVDVqaFV3LUlDdkttSTZKN2wxbHpXM1RHa3hxRlB3aXJUd2RSR1JlWkVHTTBJTDJGTVdBcDBQZWZncE9vMzhfV1hHenU1ZU1yWHhzNFZ4aUw5a2w1dW9BbkNCcmlaMDMtSEd2eFkwOGVSMUd5XzZBbGlJcFNtYlNaVVI2M1plaTZTSkRNd252M0RHZm5PcFE?oc=5"
+    },
+    {
+      "kind": "press",
+      "project": "RwB",
+      "category": "PA Media",
+      "relevance": 1.0,
+      "title": "ROBOTERA Tops Embodied AI Benchmark RoboDojo Without Additional Data or Agent RSI - PA Media",
+      "tldr": "PRESS",
+      "highlight": "ROBOTERA Tops Embodied AI Benchmark RoboDojo Without Additional Data or Agent RSI    PA Media",
+      "funding": "",
+      "image": "https://content-media.pa.media/press-release/picture/2026/10/09/01M4GJ8RGSMJP7CDZ8N1AA9FZG.jpg?fix=bounds&w=1200",
+      "tier": "match",
+      "card": null,
+      "authors": "",
+      "ref": "PA Media",
+      "date": "2026-10-09",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOWU1Ncl9sRmlrTTlyalY0VGtHQ2dHLUFvQnE4cG5EZGdORzEzeGE1T0JfZU1hMC03dThnUkNwOGdkVHRfWkdhZDZSTE1jdHo3WEFwcGtEeFhSWjVyZmptT25VUjZGclo2RFhzMmFEOG5iMXp5UnpDSG1uNzdacy03OENQVWF4NUZBYjhMNVB4RzhPYmhkd2dMUlVELWt4U3pUYmZDczluT3ZIZVhjbWstMUc1RkhtZEl2Vko2RGtlaFdFWEZaYUt3dTVMdmJkUQ?oc=5"
     },
     {
       "kind": "funding",
@@ -59,70 +59,53 @@
     {
       "kind": "press",
       "project": "MOSAIC",
-      "category": "Tata Consultancy Services",
+      "category": "Assembly Magazine",
       "relevance": 0.3,
-      "title": "Human-AI Collaboration for a Future-ready Insurance Workforce - Tata Consultancy Services",
+      "title": "AWS Launches Physical AI Toolchain to Accelerate Industrial Robotics Development - Assembly Magazine",
       "tldr": "PRESS",
-      "highlight": "Human-AI Collaboration for a Future-ready Insurance Workforce    Tata Consultancy Services",
+      "highlight": "AWS Launches Physical AI Toolchain to Accelerate Industrial Robotics Development    Assembly Magazine",
       "funding": "",
-      "image": "",
+      "image": "https://www.assemblymag.com/ext/resources/2026/10/08/newlifestock.jpg?height=635&t=1791447185&width=1200",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "Tata Consultancy Services",
-      "date": "2026-10-07",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOdy1LSmtCOTE0TDZWVWVWcFJjYUZXOU5mR2V5RTBfX3dLUFlmSEFMUlVxaFJKekJkZ2J3ZEVBSWZuSllNRW4zY2dvYTZDSmxOa3AycHUxZ0Y2WEtIREZTSkphakRqTjNkWkFIRTZfNndjVTA1RjZiZHlJbVFjOVUyNHc2MEZGVWFGV3JnakpUb2pCT2Fq?oc=5"
+      "ref": "Assembly Magazine",
+      "date": "2026-10-08",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZW52S2dJZExkUTdlN0czeHpmNDlxNVN5SHNIMWhWemdkVm01LU5aeFdZdGlTby1Wb1VhYnNzakxEMnJVLTcxU2xyN1BDcjk1RmQ3VnZMbXcyeDF2czdIamdPbEV5UGgzdHNTUFVjeTY5aXVYdnpyckpIWmZkTDRmOXlEV255WUZ4RnJnb0E3ZVNPdjc4X20yU3VDNVFzT2EtUW9kcWZubEpwbEZ3RElmTnhyeThSZXhCS2J1dVJKNUlsdw?oc=5"
     },
     {
       "kind": "press",
       "project": "ADAM-CHAT",
-      "category": "PR Newswire",
+      "category": "Yahoo Finance",
       "relevance": 0.3,
-      "title": "Simplilearn and Columbia Engineering Executive Education Launch Collaboration to Advance Agentic AI Skills Among Professionals - PR Newswire",
+      "title": "NTT DATA Business Solutions launches \"Elevate\", its Agentic AI-powered delivery framework, to help accelerate SAP transformations - Yahoo Finance",
       "tldr": "PRESS",
-      "highlight": "Simplilearn and Columbia Engineering Executive Education Launch Collaboration to Advance Agentic AI Skills Among Professionals    PR Newswire",
+      "highlight": "NTT DATA Business Solutions launches \"Elevate\", its Agentic AI-powered delivery framework, to help accelerate SAP transformations    Yahoo Finance",
       "funding": "",
-      "image": "",
+      "image": "https://s.yimg.com/lo/mysterio/api/f222485098bcc846a6c4c3646e5770ed72db4604bc4211595c373c06e28128a5/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fprnewswire.com%2F8d29e72e201d43cef48d1cc0083e1cec.png",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "PR Newswire",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxQSUNhWFBuYmdhRm4xbnhPMU5BaVZDTzU3NmV1WnJRcUZINW1sSnVpU2ZaRi1tblhpLVJidjVtNC0zM082b0cybUxXcGhwdGRtZEFpbHBDRGhoVWUtVnBqSkZ1RDJMS1hRb2lYM3pKSDFwalNJOHM3ajVta0wwYWZmRWwxcXF4R1hva2dkdEJhU3VJX2ctMmJJUjlxV1B3Mzh5V204dzkwWS1Wcl9ZXzlJeG9nSF9KeU9qc1Q3aFpjbXhEMjZieGZSZ3JaSXpsSTdndHlIQWlZUG82c3dndFc1MVM5Sl8wbm1LQ0pZTzBnT0JGWnY5YkF3TkdrWTZmQjNwU0FaMGJHUUhheTBtODNj?oc=5"
+      "ref": "Yahoo Finance",
+      "date": "2026-10-12",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOemZrcXlEV25GWmR5NWhrWU9wTWVhMXFoWENKek1yMjBFaU0tNW1TRV9WSDV5SXJ1TW85bVFCeWZjRXNkaDk4ZHBLLVR1QTFIZE1yaTJ2ODEzQ0IxUXUyZGF6X1picWRGTXFwRDQtUFBUZGNGT19tYjRvX2k1S2hZMlFLd0IzM2plbXpFMURNem85VDU4UUN3d2dWT2hmc0JST2c?oc=5"
     },
     {
       "kind": "press",
       "project": "ADAM-CHAT",
-      "category": "Zawya",
+      "category": "Finextra Research",
       "relevance": 0.3,
-      "title": "AIJRF launches the “University Agentic AI Lab 2026” to empower students to design and build applied AI agents - Zawya",
+      "title": "FIS launches agentic AI suite for the office of the CFO - Finextra Research",
       "tldr": "PRESS",
-      "highlight": "AIJRF launches the “University Agentic AI Lab 2026” to empower students to design and build applied AI agents    Zawya",
-      "funding": "",
-      "image": "https://media.zawya.com/prod/images/gm_preview/e16a81afc556-1-ai-lab-u-ail-2026.png",
-      "tier": "match",
-      "card": null,
-      "authors": "",
-      "ref": "Zawya",
-      "date": "2026-10-09",
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOSjdlck95SXU5M2FFZDBwOGNEM19WOTJGZjlwdERUQmMzQUNpVlZST2tsTmVlQjFySFRHQS0ycHNienR2b3p2TUo4S2ZqX1c3MUp5clZWYzgyYS1XNDd2MWxIYzNSTHF2T0xQQXZKUzg4RndISmdkZjlPdWEtN1dhangwQnNDUG0zS1RHdFhBSW9DdlhiVTM0UW1ZNkNwNkJqeHpzbG83ekFoV3dQVTdHa3NmM1YtaUlDcnpCa3BrR0ItSmh3dHVIclBHVHU5T1BKOGd0bzdtMWM4N0pNbzF1TGJWMUl0ejJCcXNMWXY5TVNCTmRJeTZrQ3hpUFY3UQ?oc=5"
-    },
-    {
-      "kind": "press",
-      "project": "HyECHO",
-      "category": "Pulse 2.0",
-      "relevance": 0.3,
-      "title": "Backbase Launches Conversational Banking To Bring Agentic AI To Bank Customer Service - Pulse 2.0",
-      "tldr": "PRESS",
-      "highlight": "Backbase Launches Conversational Banking To Bring Agentic AI To Bank Customer Service    Pulse 2.0",
+      "highlight": "FIS launches agentic AI suite for the office of the CFO    Finextra Research",
       "funding": "",
       "image": "",
       "tier": "match",
       "card": null,
       "authors": "",
-      "ref": "Pulse 2.0",
-      "date": "2026-10-08",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbUlrWkRRNnNFZ0tnRXFMZGZrTzhRdXdDOVJpOXBNcXhjN204YlliaFBwTENIU09tZEtvSzdrV3lYUWpzdFl4RXl6TmZkQlZRVW41U3BkTFFmeW02MURRMnV6R3VpUGxLVE1KWjRWOUhFbzl4WE1QdUdiMXFZS2lNSWVvSGI3ZDhwZFFjSmtKcEVOZnVPREEyQnUwaXQ5TjlOa0xJQVpMTWvSAa4BQVVfeXFMTllCUTVpbU9jSEJEQU0xTjlLZ1EybnBmcjRua0VwUldGcDhmVnAySGNkRlEwTml6QkxERkJDdEJsYlZyMDF0RzNRTnhIYzhnMlBMWlluSmtfUUJwMEd1cXZQLUFWUVJNS2lmcmo4d24xZDBIaDd0Ui1HUGl5V1JJYlpuUE1lMGhNbklvZlhIV3pJZWl2SnUtVmw1Z2FjRlB2bVVlY1dicWZnbDVidzln?oc=5"
+      "ref": "Finextra Research",
+      "date": "2026-10-12",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVUxuSi1GMk10WkhOUnNHeTNvX0JNLU5ocnkzUnRKTnlxLVZoQjFoT1haVUtGVF9GSk1vRGNVMnNTRWIyT0VxQ3N6MWZoNElPZDFpWF9NTkhWWGFuUW43VjBaSVg0TEZjSk9HM3VTMTFsaUVtUU5QZTBZX1MyNTJrbEdTUUc3dzU3QWM1Vl9qVl8zbzBIT2dkNFBJLU9ib1U?oc=5"
     }
   ]
 }

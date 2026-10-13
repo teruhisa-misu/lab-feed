@@ -2,26 +2,9 @@
   "meta": {
     "title": "This Week in Research",
     "subtitle": "CHARM · pHRI · TACTILE · EXPRESSIVE",
-    "generated": "2026-10-12"
+    "generated": "2026-10-13"
   },
   "slides": [
-    {
-      "kind": "paper",
-      "project": "CHARM",
-      "category": "cs.RO",
-      "relevance": 1.0,
-      "title": "Recursive Video In-Context Learning for Agentic Robot",
-      "tldr": "CS.RO",
-      "highlight": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fits poorly into an agent's context.",
-      "funding": "",
-      "image": "https://arxiv.org/html/2610.06843v1/figure1_overview.png",
-      "tier": "related",
-      "card": null,
-      "authors": "Wenrui Bao et al.",
-      "ref": "arXiv:2610.06843v1",
-      "date": "2026-10-05",
-      "url": "https://arxiv.org/abs/2610.06843v1"
-    },
     {
       "kind": "paper",
       "project": "CHARM",
@@ -140,6 +123,23 @@
       "ref": "arXiv:2610.13453v1",
       "date": "2026-10-09",
       "url": "https://arxiv.org/abs/2610.13453v1"
+    },
+    {
+      "kind": "paper",
+      "project": "CHARM",
+      "category": "cs.RO",
+      "relevance": 1.0,
+      "title": "Dual-Stream Memory for Vision-Language-Action Policies",
+      "tldr": "CS.RO",
+      "highlight": "Memory-dependent manipulation requires a policy to track execution state and recover visual evidence that is no longer observable. We propose dual-stream memory for vision-language-action policies, assigning these requirements to complementary representations.",
+      "funding": "",
+      "image": "https://arxiv.org/html/2610.13262v1/teaser_integrated_results_v1.png",
+      "tier": "related",
+      "card": null,
+      "authors": "Yang Wang et al.",
+      "ref": "arXiv:2610.13262v1",
+      "date": "2026-10-09",
+      "url": "https://arxiv.org/abs/2610.13262v1"
     }
   ]
 }
